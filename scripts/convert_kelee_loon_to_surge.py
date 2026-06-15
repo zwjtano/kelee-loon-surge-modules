@@ -22,6 +22,7 @@ from typing import Iterable
 
 LIST_URL = "https://hub.kelee.one/list.json"
 RAW_MODULE_BASE_URL = "https://raw.githubusercontent.com/zwjtano/kelee-loon-surge-modules/master/modules"
+SURGE_INSTALL_BRIDGE_URL = "https://link.lxya.de/surge/install-module"
 USER_AGENT = "Loon/3.4.0 CFNetwork/1496.0.7 Darwin/23.5.0"
 SECTION_MAP = {
     "rewrite": "URL Rewrite",
@@ -263,7 +264,7 @@ def write_index(out_dir: Path, converted: list[dict[str, str]]) -> None:
     lines = ["# Converted Surge Modules", ""]
     for item in converted:
         raw_url = f"{RAW_MODULE_BASE_URL}/{item['path']}"
-        install_url = "surge:///install-module?url=" + urllib.parse.quote(raw_url, safe="")
+        install_url = f"{SURGE_INSTALL_BRIDGE_URL}?url=" + urllib.parse.quote(raw_url, safe="")
         lines.append(f"- [{item['name']}]({raw_url}) | [一键导入 Surge]({install_url})")
     lines.append("")
     (out_dir / "README.md").write_text("\n".join(lines), encoding="utf-8")
