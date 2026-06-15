@@ -281,16 +281,16 @@ def install_url_for_path(path: str) -> tuple[str, str]:
 
 def write_index(out_dir: Path, converted: list[dict[str, str]]) -> None:
     lines = [
-        "# Converted Surge Modules",
+        "# 已转换的 Surge 模块",
         "",
-        "| Icon | Module | Raw URL | One-tap import |",
+        "| 图标 | 模块 | 原始链接 | 一键导入 |",
         "| --- | --- | --- | --- |",
     ]
     for item in converted:
         raw_url, install_url = install_url_for_path(item["path"])
         lines.append(
             f"| {icon_cell(item['name'], item.get('icon_url', ''))} | "
-            f"{markdown_cell(item['name'])} | [Raw]({raw_url}) | [一键导入 Surge]({install_url}) |"
+            f"{markdown_cell(item['name'])} | [原始文件]({raw_url}) | [导入 Surge]({install_url}) |"
         )
     lines.append("")
     (out_dir / "README.md").write_text("\n".join(lines), encoding="utf-8")
@@ -301,43 +301,43 @@ def write_root_readme(readme_path: Path, converted: list[dict[str, str]], report
     needs_review = sum(1 for item in report if item["status"] == "needs-review")
     failed = sum(1 for item in report if item["status"] == "failed")
     lines = [
-        "# Kelee Loon Plugins for Surge",
+        "# Kelee Loon 插件转 Surge 模块",
         "",
-        "This repository contains Surge modules converted from the Loon plugins listed at:",
+        "本仓库收录由以下 Kelee Loon 插件列表转换而来的 Surge 模块：",
         "",
         "```text",
         "https://hub.kelee.one/",
         "```",
         "",
-        "## One-Tap Import",
+        "## 一键导入",
         "",
-        "Open the import links on the device where Surge is installed. The links use an HTTPS bridge so they work from GitHub README pages.",
+        "请在已安装 Surge 的设备上打开导入链接。导入链接使用 HTTPS 跳转桥接，方便从 GitHub README 页面直接唤起 Surge。",
         "",
-        f"Converted: {ok}, needs review: {needs_review}, failed: {failed}",
+        f"转换成功：{ok}，需要复查：{needs_review}，失败：{failed}",
         "",
-        "| Icon | Module | Raw URL | One-tap import |",
+        "| 图标 | 模块 | 原始链接 | 一键导入 |",
         "| --- | --- | --- | --- |",
     ]
     for item in converted:
         raw_url, install_url = install_url_for_path(item["path"])
         lines.append(
             f"| {icon_cell(item['name'], item.get('icon_url', ''))} | "
-            f"{markdown_cell(item['name'])} | [Raw]({raw_url}) | [Import]({install_url}) |"
+            f"{markdown_cell(item['name'])} | [原始文件]({raw_url}) | [导入 Surge]({install_url}) |"
         )
     lines.extend(
         [
             "",
-            "## Sync",
+            "## 自动同步",
             "",
-            "The workflow at `.github/workflows/update-kelee-loon-to-surge.yml` periodically downloads the Loon plugins with a Loon-style User-Agent and regenerates `modules/`, `modules/README.md`, and this README.",
+            "`.github/workflows/update-kelee-loon-to-surge.yml` 会定期使用 Loon 风格的 User-Agent 下载上游插件，并重新生成 `modules/`、`modules/README.md` 和本 README。",
             "",
-            "Conversion script:",
+            "转换脚本：",
             "",
             "```text",
             "scripts/convert_kelee_loon_to_surge.py",
             "```",
             "",
-            "Source plugins belong to their original authors. This repository only keeps an automatically converted Surge-format mirror.",
+            "源插件版权归原作者所有。本仓库仅保留自动转换后的 Surge 格式镜像。",
         ]
     )
     readme_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
