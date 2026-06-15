@@ -21,6 +21,7 @@ from typing import Iterable
 
 
 LIST_URL = "https://hub.kelee.one/list.json"
+RAW_MODULE_BASE_URL = "https://raw.githubusercontent.com/zwjtano/kelee-loon-surge-modules/master/modules"
 USER_AGENT = "Loon/3.4.0 CFNetwork/1496.0.7 Darwin/23.5.0"
 SECTION_MAP = {
     "rewrite": "URL Rewrite",
@@ -261,7 +262,9 @@ def validate_lpx_source(text: str, source: str) -> None:
 def write_index(out_dir: Path, converted: list[dict[str, str]]) -> None:
     lines = ["# Converted Surge Modules", ""]
     for item in converted:
-        lines.append(f"- [{item['name']}]({item['path']})")
+        raw_url = f"{RAW_MODULE_BASE_URL}/{item['path']}"
+        install_url = "surge:///install-module?url=" + urllib.parse.quote(raw_url, safe="")
+        lines.append(f"- [{item['name']}]({raw_url}) | [一键导入 Surge]({install_url})")
     lines.append("")
     (out_dir / "README.md").write_text("\n".join(lines), encoding="utf-8")
 

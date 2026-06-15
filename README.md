@@ -14,11 +14,23 @@ Converted modules are in:
 modules/
 ```
 
-Example raw URL:
+Full module index:
 
-```text
-https://raw.githubusercontent.com/zwjtano/kelee-loon-surge-modules/master/modules/YouTube_remove_ads.sgmodule
-```
+[Open modules index](modules/README.md)
+
+## One-Tap Import
+
+Open these links on the device where Surge is installed:
+
+| Module | Raw URL | One-tap import |
+| --- | --- | --- |
+| YouTube 去广告 | [Raw](https://raw.githubusercontent.com/zwjtano/kelee-loon-surge-modules/master/modules/YouTube_remove_ads.sgmodule) | [Import](surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzwjtano%2Fkelee-loon-surge-modules%2Fmaster%2Fmodules%2FYouTube_remove_ads.sgmodule) |
+| Bilibili 去广告 | [Raw](https://raw.githubusercontent.com/zwjtano/kelee-loon-surge-modules/master/modules/Bilibili_remove_ads.sgmodule) | [Import](surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzwjtano%2Fkelee-loon-surge-modules%2Fmaster%2Fmodules%2FBilibili_remove_ads.sgmodule) |
+| Zhihu 去广告 | [Raw](https://raw.githubusercontent.com/zwjtano/kelee-loon-surge-modules/master/modules/Zhihu_remove_ads.sgmodule) | [Import](surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzwjtano%2Fkelee-loon-surge-modules%2Fmaster%2Fmodules%2FZhihu_remove_ads.sgmodule) |
+| 小红书去广告 | [Raw](https://raw.githubusercontent.com/zwjtano/kelee-loon-surge-modules/master/modules/RedPaper_remove_ads.sgmodule) | [Import](surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzwjtano%2Fkelee-loon-surge-modules%2Fmaster%2Fmodules%2FRedPaper_remove_ads.sgmodule) |
+| Spotify 去广告 | [Raw](https://raw.githubusercontent.com/zwjtano/kelee-loon-surge-modules/master/modules/Spotify_remove_ads.sgmodule) | [Import](surge:///install-module?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzwjtano%2Fkelee-loon-surge-modules%2Fmaster%2Fmodules%2FSpotify_remove_ads.sgmodule) |
+
+Every module in [modules/README.md](modules/README.md) also has a one-tap Surge import link.
 
 ## Status
 
