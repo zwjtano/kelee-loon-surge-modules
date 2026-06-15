@@ -1,0 +1,27 @@
+#!name=有道翻译官去广告 - Surge
+#!desc=移除开屏广告、横幅推广，精简首页。；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
+#!homepage=https://kelee.one/Tool/Loon/Lpx/YoudaoTrans_remove_ads.lpx
+#!system=ios
+#!openUrl=https://apps.apple.com/app/id576337924
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!homepage=https://hub.kelee.one
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YoudaoTrans.png
+#!date=2026-06-01 17:11:35
+
+[URL Rewrite]
+^https:\/\/gorgon\.youdao\.com\/gorgon\/v2\/request\.s reject-dict
+^https:\/\/gorgon\.youdao\.com\/gorgon\/brand\/prefetch\.s reject-dict
+
+^https:\/\/gorgon\.youdao\.com\/gorgon\/request\.s reject-dict
+^https:\/\/fanyiguan-server\.youdao\.com\/server\/banner\? reject-dict
+^https:\/\/dict\.youdao\.com\/vip\/activity\/fanyiguan\/sevendayfree\/imei\? reject-dict
+
+^https:\/\/dict\.youdao\.com\/wordbook\/recommend\?all=false reject-dict
+
+^https:\/\/api-overmind\.youdao\.com\/openapi\/get\/luna\/dict\/trans_abtest\/online\/iOS\? reject-dict
+
+[MITM]
+hostname = %APPEND% gorgon.youdao.com, fanyiguan-server.youdao.com, api-overmind.youdao.com, dict.youdao.com

@@ -1,0 +1,1626 @@
+[
+  {
+    "name": "HTTPDNS拦截器",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx",
+    "output": "modules\\Block_HTTPDNS.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "广告平台拦截器",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx",
+    "output": "modules\\BlockAdvertisers.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "1.1.1.1配置管理",
+    "source": "https://kelee.one/Tool/Loon/Lpx/1.1.1.1.lpx",
+    "output": "modules\\1.1.1.1.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "36氪去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/36Kr_remove_ads.lpx",
+    "output": "modules\\36Kr_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "123云盘去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/123NetWorkDisk_remove_ads.lpx",
+    "output": "modules\\123NetWorkDisk_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "360摄像机去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/360SmartCamera_remove_ads.lpx",
+    "output": "modules\\360SmartCamera_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "360智慧生活去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SafetyHome_remove_ads.lpx",
+    "output": "modules\\SafetyHome_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "555电影去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/555DY_remove_ads.lpx",
+    "output": "modules\\555DY_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "12306去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/12306_remove_ads.lpx",
+    "output": "modules\\12306_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Apple天气增强",
+    "source": "https://kelee.one/Tool/Loon/Lpx/AppleWeatherEnhancer.lpx",
+    "output": "modules\\AppleWeatherEnhancer.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "B612咔叽去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SnowCamera_remove_ads.lpx",
+    "output": "modules\\SnowCamera_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "BoxJs",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx",
+    "output": "modules\\BoxJs.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "CC直播去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/CCLive_remove_ads.lpx",
+    "output": "modules\\CCLive_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Dlabel云标签去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Dlabel_remove_ads.lpx",
+    "output": "modules\\Dlabel_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "DNS防泄露",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx",
+    "output": "modules\\Prevent_DNS_Leaks.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "DREAME去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/DREAME_remove_ads.lpx",
+    "output": "modules\\DREAME_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "ECOVACS HOME去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/EcovacsHome_remove_ads.lpx",
+    "output": "modules\\EcovacsHome_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Fileball网盘挂载",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Fileball_mount.lpx",
+    "output": "modules\\Fileball_mount.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Follow每日签到",
+    "source": "https://kelee.one/Tool/Loon/Lpx/FollowRSS_checkin.lpx",
+    "output": "modules\\FollowRSS_checkin.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Foodie去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Foodie_remove_ads.lpx",
+    "output": "modules\\Foodie_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "GitHub加速",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Switch_github_mirror.lpx",
+    "output": "modules\\Switch_github_mirror.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Google搜索重定向",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Google.lpx",
+    "output": "modules\\Google.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "IPA工具箱助手",
+    "source": "https://kelee.one/Tool/Loon/Lpx/IPATool.lpx",
+    "output": "modules\\IPATool.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "IT之家去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/IThome_remove_ads.lpx",
+    "output": "modules\\IThome_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Jump去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Jump_remove_ads.lpx",
+    "output": "modules\\Jump_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Keep去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Keep_remove_ads.lpx",
+    "output": "modules\\Keep_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "KOOK去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KOOK_remove_ads.lpx",
+    "output": "modules\\KOOK_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Line去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Line_remove_ads.lpx",
+    "output": "modules\\Line_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Pinterest去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Pinterest_remove_ads.lpx",
+    "output": "modules\\Pinterest_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "QQ链接解锁",
+    "source": "https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx",
+    "output": "modules\\QQ_Redirect.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "QQ音乐去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/QQMusic_remove_ads.lpx",
+    "output": "modules\\QQMusic_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Reddit去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Reddit_remove_ads.lpx",
+    "output": "modules\\Reddit_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "ReelShort去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ReelShort_remove_ads.lpx",
+    "output": "modules\\ReelShort_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Roborock去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Roborock_remove_ads.lpx",
+    "output": "modules\\Roborock_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "RQrun去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/RQrun_remove_ads.lpx",
+    "output": "modules\\RQrun_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Script-Hub",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx",
+    "output": "modules\\Script-Hub.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Soul去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Soul_remove_ads.lpx",
+    "output": "modules\\Soul_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Spotify去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Spotify_remove_ads.lpx",
+    "output": "modules\\Spotify_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Spotify歌词增强",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Spotify_lyrics_translation.lpx",
+    "output": "modules\\Spotify_lyrics_translation.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Sub-Store",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx",
+    "output": "modules\\Sub-Store.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "TeraBox去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TeraBox_remove_ads.lpx",
+    "output": "modules\\TeraBox_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "TestFlight地区解锁",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx",
+    "output": "modules\\TestFlightRegionUnlock.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "TubeMax去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TubeMax_remove_ads.lpx",
+    "output": "modules\\TubeMax_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Tumblr去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Tumblr_remove_ads.lpx",
+    "output": "modules\\Tumblr_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "Uki去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Uki_remove_ads.lpx",
+    "output": "modules\\Uki_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "VVebo时间线修复",
+    "source": "https://kelee.one/Tool/Loon/Lpx/VVebo_repair.lpx",
+    "output": "modules\\VVebo_repair.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "WARP节点查询",
+    "source": "https://kelee.one/Tool/Loon/Lpx/WARP_Node_Query.lpx",
+    "output": "modules\\WARP_Node_Query.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "WPS每日签到",
+    "source": "https://kelee.one/Tool/Loon/Lpx/WPS_checkin.lpx",
+    "output": "modules\\WPS_checkin.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "YouTube去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx",
+    "output": "modules\\YouTube_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "YouTube双语翻译",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx",
+    "output": "modules\\YouTubeSubtitlesTranslation.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "YY去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YY_Voice_remove_ads.lpx",
+    "output": "modules\\YY_Voice_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "YY语音去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YYVoiceTool_remove_ads.lpx",
+    "output": "modules\\YYVoiceTool_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "ZAKER去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ZAKER_remove_ads.lpx",
+    "output": "modules\\ZAKER_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "爱企查去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Aiinquiry_remove_ads.lpx",
+    "output": "modules\\Aiinquiry_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "爱奇艺去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/iQiYi_Video_remove_ads.lpx",
+    "output": "modules\\iQiYi_Video_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "阿里云盘去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/AliYunDrive_remove_ads.lpx",
+    "output": "modules\\AliYunDrive_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "百度地图去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BaiduMap_remove_ads.lpx",
+    "output": "modules\\BaiduMap_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "百度输入法去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Baidu_input_method_remove_ads.lpx",
+    "output": "modules\\Baidu_input_method_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "百度贴吧去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Tieba_remove_ads.lpx",
+    "output": "modules\\Tieba_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "百度网盘去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BaiduNetDisk_remove_ads.lpx",
+    "output": "modules\\BaiduNetDisk_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "百度网页去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BaiduSearchWebpage_remove_ads.lpx",
+    "output": "modules\\BaiduSearchWebpage_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "百度文库去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BaiduWenku_remove_ads.lpx",
+    "output": "modules\\BaiduWenku_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "宝宝树孕育去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BabyTree_remove_ads.lpx",
+    "output": "modules\\BabyTree_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "贝壳找房去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Beike_remove_ads.lpx",
+    "output": "modules\\Beike_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "哔哩哔哩漫画去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BiliComic_remove_ads.lpx",
+    "output": "modules\\BiliComic_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "哔哩哔哩去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx",
+    "output": "modules\\Bilibili_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "比特球云盘去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BitqiuPan_remove_ads.lpx",
+    "output": "modules\\BitqiuPan_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "波点音乐去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BodianMusic_remove_ads.lpx",
+    "output": "modules\\BodianMusic_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "薄荷健康去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BooHee_remove_ads.lpx",
+    "output": "modules\\BooHee_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "菜鸟去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Cainiao_remove_ads.lpx",
+    "output": "modules\\Cainiao_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "财新去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/CaixinMedia_remove_ads.lpx",
+    "output": "modules\\CaixinMedia_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "彩云天气去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ColorfulClouds_remove_ads.lpx",
+    "output": "modules\\ColorfulClouds_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "测测去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Cece_remove_ads.lpx",
+    "output": "modules\\Cece_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "成分喵去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ChengFenMiao_remove_ads.lpx",
+    "output": "modules\\ChengFenMiao_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "触站去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Chuzhan_remove_ads.lpx",
+    "output": "modules\\Chuzhan_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "磁力宅播放器去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/XFuse_remove_ads.lpx",
+    "output": "modules\\XFuse_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "代理链路检测",
+    "source": "https://kelee.one/Tool/Loon/Lpx/NodeLinkCheck.lpx",
+    "output": "modules\\NodeLinkCheck.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "大麦去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Damai_remove_ads.lpx",
+    "output": "modules\\Damai_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "得间小说去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/iReaderDejian_remove_ads.lpx",
+    "output": "modules\\iReaderDejian_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "得物去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Dewu_remove_ads.lpx",
+    "output": "modules\\Dewu_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "滴答出行去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/DidaPincheTaxi_remove_ads.lpx",
+    "output": "modules\\DidaPincheTaxi_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "滴滴出行去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/DiDi_remove_ads.lpx",
+    "output": "modules\\DiDi_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "叮咚买菜去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/DingdongMaicai_remove_ads.lpx",
+    "output": "modules\\DingdongMaicai_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "豆瓣去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/DouBan_remove_ads.lpx",
+    "output": "modules\\DouBan_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "豆瓣阅读去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/DoubanRead_remove_ads.lpx",
+    "output": "modules\\DoubanRead_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "斗鱼去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Douyu_remove_ads.lpx",
+    "output": "modules\\Douyu_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "堆糖去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/DuiTang_remove_ads.lpx",
+    "output": "modules\\DuiTang_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "番茄小说去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/DragonRead_remove_ads.lpx",
+    "output": "modules\\DragonRead_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "帆书去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KebidaDushu_remove_ads.lpx",
+    "output": "modules\\KebidaDushu_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "飞客去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/FlyerTea_remove_ads.lpx",
+    "output": "modules\\FlyerTea_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "飞猪旅行去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TaobaoTravel_remove_ads.lpx",
+    "output": "modules\\TaobaoTravel_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "粉笔去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/FenBi_remove_ads.lpx",
+    "output": "modules\\FenBi_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "丰巢去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/FC_Box_remove_ads.lpx",
+    "output": "modules\\FC_Box_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "风鸟去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/RiskBird_remove_ads.lpx",
+    "output": "modules\\RiskBird_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "纷玩岛去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/LiveLab_remove_ads.lpx",
+    "output": "modules\\LiveLab_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "盖得排行去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/GuideRank_remove_ads.lpx",
+    "output": "modules\\GuideRank_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "高德地图去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx",
+    "output": "modules\\Amap_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "稿定设计去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/GaoDing_remove_ads.lpx",
+    "output": "modules\\GaoDing_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "航旅纵横去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Umetrip_remove_ads.lpx",
+    "output": "modules\\Umetrip_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "盒马去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MrHema_remove_ads.lpx",
+    "output": "modules\\MrHema_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "华尔街见闻去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/FinanceNews_remove_ads.lpx",
+    "output": "modules\\FinanceNews_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "华住会去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/HantingHotels_remove_ads.lpx",
+    "output": "modules\\HantingHotels_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "虎扑去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/HUPU_remove_ads.lpx",
+    "output": "modules\\HUPU_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "虎嗅去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Huxiu_remove_ads.lpx",
+    "output": "modules\\Huxiu_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "驾考宝典去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/JiaKaoBaoDian_remove_ads.lpx",
+    "output": "modules\\JiaKaoBaoDian_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "健康160去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/91160_remove_ads.lpx",
+    "output": "modules\\91160_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "剑网三无界去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SeasunJX3_remove_ads.lpx",
+    "output": "modules\\SeasunJX3_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "驾校一点通去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/JiaXiaoDrive_remove_ads.lpx",
+    "output": "modules\\JiaXiaoDrive_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "节点检测工具",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx",
+    "output": "modules\\Node_detection_tool.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "京东比价",
+    "source": "https://kelee.one/Tool/Loon/Lpx/JD_Price.lpx",
+    "output": "modules\\JD_Price.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "京东去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/JD_remove_ads.lpx",
+    "output": "modules\\JD_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "京东外卖去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/JDWaimai_remove_ads.lpx",
+    "output": "modules\\JDWaimai_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "金山文档去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/WPS_Documents_remove_ads.lpx",
+    "output": "modules\\WPS_Documents_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "可莉广告过滤器",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx",
+    "output": "modules\\Remove_ads_by_keli.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "快递100去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KuaiDi100_remove_ads.lpx",
+    "output": "modules\\KuaiDi100_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "快对去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KuaiDuiZuoYe_remove_ads.lpx",
+    "output": "modules\\KuaiDuiZuoYe_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "快捷搜索",
+    "source": "https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx",
+    "output": "modules\\QuickSearch.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "快看漫画去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KuaiKanComic_remove_ads.lpx",
+    "output": "modules\\KuaiKanComic_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "快手去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KuaiShou_remove_ads.lpx",
+    "output": "modules\\KuaiShou_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "快影去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KwaiVideoeditor_remove_ads.lpx",
+    "output": "modules\\KwaiVideoeditor_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "夸克去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/QuarkBrowser_remove_ads.lpx",
+    "output": "modules\\QuarkBrowser_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "夸克扫描王去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/QuarkScanking_remove_ads.lpx",
+    "output": "modules\\QuarkScanking_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "酷安去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/CoolApk_remove_ads.lpx",
+    "output": "modules\\CoolApk_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "酷狗概念版去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KuGouYouth_remove_ads.lpx",
+    "output": "modules\\KuGouYouth_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "酷狗铃声去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KGRing_remove_ads.lpx",
+    "output": "modules\\KGRing_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "酷狗音乐去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KuGou_remove_ads.lpx",
+    "output": "modules\\KuGou_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "库街区去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KuroBBS_remove_ads.lpx",
+    "output": "modules\\KuroBBS_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "酷我音乐去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Kuwo_remove_ads.lpx",
+    "output": "modules\\Kuwo_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "乐播投屏去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TV_Assistant_remove_ads.lpx",
+    "output": "modules\\TV_Assistant_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "两步路户外助手去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/2bulu_remove_ads.lpx",
+    "output": "modules\\2bulu_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "萝卜快跑去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/RoboTaxi_remove_ads.lpx",
+    "output": "modules\\RoboTaxi_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "马蜂窝去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MaFengWo_remove_ads.lpx",
+    "output": "modules\\MaFengWo_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "芒果TV去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MangoTV_remove_ads.lpx",
+    "output": "modules\\MangoTV_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "漫客栈去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MKZ_remove_ads.lpx",
+    "output": "modules\\MKZ_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "猫耳FM去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/CatEarFM_remove_ads.lpx",
+    "output": "modules\\CatEarFM_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "美丽修行去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Meizhixiuxing_remove_ads.lpx",
+    "output": "modules\\Meizhixiuxing_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "美食杰去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MeiShiJie_remove_ads.lpx",
+    "output": "modules\\MeiShiJie_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "美图秀秀去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MeiTu_remove_ads.lpx",
+    "output": "modules\\MeiTu_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "美颜相机去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MeituMYXJ_remove_ads.lpx",
+    "output": "modules\\MeituMYXJ_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "美柚去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MeetYou_remove_ads.lpx",
+    "output": "modules\\MeetYou_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "萌娘百科去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MoeGirlWiki_remove_ads.lpx",
+    "output": "modules\\MoeGirlWiki_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "米游社去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/miHoYoBBS_remove_ads.lpx",
+    "output": "modules\\miHoYoBBS_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "墨迹天气去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MojiWeather_remove_ads.lpx",
+    "output": "modules\\MojiWeather_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "脉脉去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MaiMai_remove_ads.lpx",
+    "output": "modules\\MaiMai_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "摩天轮去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/FerrisWheel_remove_ads.lpx",
+    "output": "modules\\FerrisWheel_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "南网在线去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/CSG_remove_ads.lpx",
+    "output": "modules\\CSG_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "胖乖生活去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/PangguaiLife_remove_ads.lpx",
+    "output": "modules\\PangguaiLife_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "配音秀去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/DubbingShow_remove_ads.lpx",
+    "output": "modules\\DubbingShow_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "拼多多去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/PinDuoDuo_remove_ads.lpx",
+    "output": "modules\\PinDuoDuo_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "皮皮虾去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/PiPiXia_remove_ads.lpx",
+    "output": "modules\\PiPiXia_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "朴朴超市去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/PuPuMall_remove_ads.lpx",
+    "output": "modules\\PuPuMall_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "前程无忧去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/51Job_remove_ads.lpx",
+    "output": "modules\\51Job_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "汽车之家去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/AutoHome_remove_ads.lpx",
+    "output": "modules\\AutoHome_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "起点读书去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/QiDian_remove_ads.lpx",
+    "output": "modules\\QiDian_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "七猫小说去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SevenCat_remove_ads.lpx",
+    "output": "modules\\SevenCat_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "蜻蜓FM去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/QtingFM_remove_ads.lpx",
+    "output": "modules\\QtingFM_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "汽水音乐去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SodaMusic_remove_ads.lpx",
+    "output": "modules\\SodaMusic_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "启信宝去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/QiXinBao_remove_ads.lpx",
+    "output": "modules\\QiXinBao_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "全民K歌去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/QQKSong_remove_ads.lpx",
+    "output": "modules\\QQKSong_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "瑞幸咖啡去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/LuckinCoffee_remove_ads.lpx",
+    "output": "modules\\LuckinCoffee_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "省钱快报去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YueDanBa_remove_ads.lpx",
+    "output": "modules\\YueDanBa_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "什么值得买去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/smzdm_remove_ads.lpx",
+    "output": "modules\\smzdm_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "收银通商户端去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ShouYinTongMerchant_remove_ads.lpx",
+    "output": "modules\\ShouYinTongMerchant_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "顺丰速运去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SF-Express_remove_ads.lpx",
+    "output": "modules\\SF-Express_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "书旗小说去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ShuQiCenterReader_remove_ads.lpx",
+    "output": "modules\\ShuQiCenterReader_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "数字心动去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/DigitalHeartbeat_remove_ads.lpx",
+    "output": "modules\\DigitalHeartbeat_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "随手记去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/KingdeeMyMoney_remove_ads.lpx",
+    "output": "modules\\KingdeeMyMoney_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "淘宝去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx",
+    "output": "modules\\Taobao_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "淘票票去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Taopiaopiao_remove_ads.lpx",
+    "output": "modules\\Taopiaopiao_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "他趣去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Taqu_remove_ads.lpx",
+    "output": "modules\\Taqu_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "腾讯视频去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Tencent_Video_remove_ads.lpx",
+    "output": "modules\\Tencent_Video_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "腾讯文档去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TXDocs_remove_ads.lpx",
+    "output": "modules\\TXDocs_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "图怪兽去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TuGuaiShou_remove_ads.lpx",
+    "output": "modules\\TuGuaiShou_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "推栏去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Daily_remove_ads.lpx",
+    "output": "modules\\Daily_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "挖财记账去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/WaCaiJiZhang_remove_ads.lpx",
+    "output": "modules\\WaCaiJiZhang_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "网易大神去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/NetEaseGodlike_remove_ads.lpx",
+    "output": "modules\\NetEaseGodlike_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "网易新闻去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/NeteaseNews_remove_ads.lpx",
+    "output": "modules\\NeteaseNews_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "网易有道词典去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YoudaoDict_remove_ads.lpx",
+    "output": "modules\\YoudaoDict_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "网易邮箱大师去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MailMaster_remove_ads.lpx",
+    "output": "modules\\MailMaster_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "网易云音乐去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/NeteaseCloudMusic_remove_ads.lpx",
+    "output": "modules\\NeteaseCloudMusic_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "完美世界电竞去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/PerfectWorldEsport_remove_ads.lpx",
+    "output": "modules\\PerfectWorldEsport_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "微博轻享版去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Weibo_intl_remove_ads.lpx",
+    "output": "modules\\Weibo_intl_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "微博去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Weibo_remove_ads.lpx",
+    "output": "modules\\Weibo_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "威锋去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/WPForum_remove_ads.lpx",
+    "output": "modules\\WPForum_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "微脉圈去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Weimai_remove_ads.lpx",
+    "output": "modules\\Weimai_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "微信公众号去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Weixin_Official_Accounts_remove_ads.lpx",
+    "output": "modules\\Weixin_Official_Accounts_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "微信外部链接解锁",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx",
+    "output": "modules\\Weixin_external_links_unlock.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "微信小程序去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx",
+    "output": "modules\\WexinMiniPrograms_Remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "沃尔玛去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Walmart_remove_ads.lpx",
+    "output": "modules\\Walmart_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "蜗牛睡眠去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SnailSleep_remove_ads.lpx",
+    "output": "modules\\SnailSleep_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "无他相机去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/WutaCamera_remove_ads.lpx",
+    "output": "modules\\WutaCamera_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "下厨房去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/XiaChuFang_remove_ads.lpx",
+    "output": "modules\\XiaChuFang_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "香港抖音去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/HKDouYin_remove_ads.lpx",
+    "output": "modules\\HKDouYin_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "向日葵去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/OraySunlogin_remove_ads.lpx",
+    "output": "modules\\OraySunlogin_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "闲鱼去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/FleaMarket_remove_ads.lpx",
+    "output": "modules\\FleaMarket_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "小蚕霸王餐去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/XiaoCan_remove_ads.lpx",
+    "output": "modules\\XiaoCan_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "小店掌柜去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ShopKeeperAdmin_remove_ads.lpx",
+    "output": "modules\\ShopKeeperAdmin_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "小黑盒去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/XiaoHeiHe_remove_ads.lpx",
+    "output": "modules\\XiaoHeiHe_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "小红书去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx",
+    "output": "modules\\RedPaper_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "小桔充电去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/XiaojukejiCharge_remove_ads.lpx",
+    "output": "modules\\XiaojukejiCharge_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "小喵看书去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MiaoRead_remove_ads.lpx",
+    "output": "modules\\MiaoRead_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "小米音箱去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/XiaomiSpeaker_remove_ads.lpx",
+    "output": "modules\\XiaomiSpeaker_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "小睡眠去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/HeartideBrainWave_remove_ads.lpx",
+    "output": "modules\\HeartideBrainWave_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "小象超市去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/iMaiCai_remove_ads.lpx",
+    "output": "modules\\iMaiCai_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "小宇宙去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/CosmosPodcast_remove_ads.lpx",
+    "output": "modules\\CosmosPodcast_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "喜马拉雅去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Himalaya_remove_ads.lpx",
+    "output": "modules\\Himalaya_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "行者户外去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/OnTheWay_remove_ads.lpx",
+    "output": "modules\\OnTheWay_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "雪球去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Snowball_remove_ads.lpx",
+    "output": "modules\\Snowball_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "迅雷去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/XunLei_remove_ads.lpx",
+    "output": "modules\\XunLei_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "医考帮去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YiKaoBang_remove_ads.lpx",
+    "output": "modules\\YiKaoBang_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "一刻相册去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BaiduPhoto_remove_ads.lpx",
+    "output": "modules\\BaiduPhoto_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "萤石云视频去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/VideoGo_remove_ads.lpx",
+    "output": "modules\\VideoGo_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "一甜相机去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Yitian_remove_ads.lpx",
+    "output": "modules\\Yitian_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "有道翻译官去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YoudaoTrans_remove_ads.lpx",
+    "output": "modules\\YoudaoTrans_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "有道云笔记去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YoudaoNote_remove_ads.lpx",
+    "output": "modules\\YoudaoNote_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "优酷视频去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YouKu_Video_remove_ads.lpx",
+    "output": "modules\\YouKu_Video_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "阅友去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Yueyou_remove_ads.lpx",
+    "output": "modules\\Yueyou_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "云鲸智能去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/NarwelRobots_remove_ads.lpx",
+    "output": "modules\\NarwelRobots_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "掌上无畏契约去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ValorantBible_remove_ads.lpx",
+    "output": "modules\\ValorantBible_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "掌上英雄联盟去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/LOL_Bible_remove_ads.lpx",
+    "output": "modules\\LOL_Bible_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "掌阅去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/iReader_remove_ads.lpx",
+    "output": "modules\\iReader_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "智慧苏州去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SuZhouCitizenCard_remove_ads.lpx",
+    "output": "modules\\SuZhouCitizenCard_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "知乎去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Zhihu_remove_ads.lpx",
+    "output": "modules\\Zhihu_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "智联招聘去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ZhiLianZhaoPin_remove_ads.lpx",
+    "output": "modules\\ZhiLianZhaoPin_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "知识星球去水印",
+    "source": "https://kelee.one/Tool/Loon/Lpx/UnnooQuan_remove_watermark.lpx",
+    "output": "modules\\UnnooQuan_remove_watermark.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "中国人保去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/PICC_Insurance_remove_ads.lpx",
+    "output": "modules\\PICC_Insurance_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "中国移动云盘去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/mobileClouds_remove_ads.lpx",
+    "output": "modules\\mobileClouds_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "中华万年历去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/EtouchEcalendar_remove_ads.lpx",
+    "output": "modules\\EtouchEcalendar_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "转转去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ZhuanZhuan_remove_ads.lpx",
+    "output": "modules\\ZhuanZhuan_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "自动加入TestFlight",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Auto_Join_TF.lpx",
+    "output": "modules\\Auto_Join_TF.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "纵横小说去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ZongHeng_remove_ads.lpx",
+    "output": "modules\\ZongHeng_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "name": "最右去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ZuiYou_remove_ads.lpx",
+    "output": "modules\\ZuiYou_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": []
+  }
+]
