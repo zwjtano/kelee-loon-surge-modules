@@ -47,6 +47,7 @@ class PluginItem:
     name: str
     url: str
     plugin_url: str
+    icon_url: str = ""
 
 
 def fetch_text(url: str, timeout: int) -> str:
@@ -76,6 +77,7 @@ def load_plugin_list(list_url: str, timeout: int) -> list[PluginItem]:
                     name=entry.get("name") or Path(plugin_url).stem,
                     url=import_url,
                     plugin_url=plugin_url,
+                    icon_url=entry.get("icon") or "",
                 )
             )
     return items
@@ -260,23 +262,15 @@ def validate_lpx_source(text: str, source: str) -> None:
         raise ValueError(f"Downloaded content does not look like a Loon plugin: {source}")
 
 
-def icon_for_name(name: str) -> str:
-    lowered = name.lower()
-    if any(keyword in lowered for keyword in ("youtube", "bilibili", "电影", "直播", "tv", "视频", "番茄")):
-        return "🎬"
-    if any(keyword in lowered for keyword in ("music", "spotify", "网易云", "酷狗", "酷我", "音频", "喜马拉雅")):
-        return "🎵"
-    if any(keyword in lowered for keyword in ("dns", "httpdns", "拦截", "防泄露", "广告平台", "redirect")):
-        return "🛡️"
-    if any(keyword in lowered for keyword in ("github", "google", "telegram", "twitter", "reddit", "微博", "知乎", "小红书")):
-        return "🌐"
-    if any(keyword in lowered for keyword in ("apple", "天气", "地图", "amap", "12306", "drive", "云盘", "网盘")):
-        return "🧭"
-    if any(keyword in lowered for keyword in ("checkin", "签到", "助手", "boxjs", "工具", "配置", "管理")):
-        return "🧰"
-    if "去广告" in name:
-        return "🚫"
-    return "📦"
+def markdown_cell(text: str) -> str:
+    return text.replace("|", "\\|").replace("\n", " ")
+
+
+def icon_cell(name: str, icon_url: str) -> str:
+    if not icon_url.startswith(("http://", "https://")):
+        return ""
+    alt = markdown_cell(name).replace('"', "&quot;")
+    return f'<img src="{icon_url}" alt="{alt}" width="28" height="28">'
 
 
 def install_url_for_path(path: str) -> tuple[str, str]:
@@ -294,7 +288,10 @@ def write_index(out_dir: Path, converted: list[dict[str, str]]) -> None:
     ]
     for item in converted:
         raw_url, install_url = install_url_for_path(item["path"])
-        lines.append(f"| {icon_for_name(item['name'])} | {item['name']} | [Raw]({raw_url}) | [一键导入 Surge]({install_url}) |")
+        lines.append(
+            f"| {icon_cell(item['name'], item.get('icon_url', ''))} | "
+            f"{markdown_cell(item['name'])} | [Raw]({raw_url}) | [一键导入 Surge]({install_url}) |"
+        )
     lines.append("")
     (out_dir / "README.md").write_text("\n".join(lines), encoding="utf-8")
 
@@ -323,7 +320,10 @@ def write_root_readme(readme_path: Path, converted: list[dict[str, str]], report
     ]
     for item in converted:
         raw_url, install_url = install_url_for_path(item["path"])
-        lines.append(f"| {icon_for_name(item['name'])} | {item['name']} | [Raw]({raw_url}) | [Import]({install_url}) |")
+        lines.append(
+            f"| {icon_cell(item['name'], item.get('icon_url', ''))} | "
+            f"{markdown_cell(item['name'])} | [Raw]({raw_url}) | [Import]({install_url}) |"
+        )
     lines.extend(
         [
             "",
@@ -378,7 +378,7 @@ def main() -> int:
             result = convert_lpx_to_surge(source, item.plugin_url, stem)
             output_path.write_text(result.text, encoding="utf-8")
             entry["warnings"] = result.warnings
-            converted_index.append({"name": item.name, "path": output_path.name})
+            converted_index.append({"name": item.name, "path": output_path.name, "icon_url": item.icon_url})
             if result.warnings:
                 entry["status"] = "needs-review"
         except Exception as exc:  # noqa: BLE001 - report every plugin independently.
