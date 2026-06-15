@@ -260,14 +260,87 @@ def validate_lpx_source(text: str, source: str) -> None:
         raise ValueError(f"Downloaded content does not look like a Loon plugin: {source}")
 
 
+def icon_for_name(name: str) -> str:
+    lowered = name.lower()
+    if any(keyword in lowered for keyword in ("youtube", "bilibili", "电影", "直播", "tv", "视频", "番茄")):
+        return "🎬"
+    if any(keyword in lowered for keyword in ("music", "spotify", "网易云", "酷狗", "酷我", "音频", "喜马拉雅")):
+        return "🎵"
+    if any(keyword in lowered for keyword in ("dns", "httpdns", "拦截", "防泄露", "广告平台", "redirect")):
+        return "🛡️"
+    if any(keyword in lowered for keyword in ("github", "google", "telegram", "twitter", "reddit", "微博", "知乎", "小红书")):
+        return "🌐"
+    if any(keyword in lowered for keyword in ("apple", "天气", "地图", "amap", "12306", "drive", "云盘", "网盘")):
+        return "🧭"
+    if any(keyword in lowered for keyword in ("checkin", "签到", "助手", "boxjs", "工具", "配置", "管理")):
+        return "🧰"
+    if "去广告" in name:
+        return "🚫"
+    return "📦"
+
+
+def install_url_for_path(path: str) -> tuple[str, str]:
+    raw_url = f"{RAW_MODULE_BASE_URL}/{path}"
+    install_url = f"{SURGE_INSTALL_BRIDGE_URL}?url=" + urllib.parse.quote(raw_url, safe="")
+    return raw_url, install_url
+
+
 def write_index(out_dir: Path, converted: list[dict[str, str]]) -> None:
-    lines = ["# Converted Surge Modules", ""]
+    lines = [
+        "# Converted Surge Modules",
+        "",
+        "| Icon | Module | Raw URL | One-tap import |",
+        "| --- | --- | --- | --- |",
+    ]
     for item in converted:
-        raw_url = f"{RAW_MODULE_BASE_URL}/{item['path']}"
-        install_url = f"{SURGE_INSTALL_BRIDGE_URL}?url=" + urllib.parse.quote(raw_url, safe="")
-        lines.append(f"- [{item['name']}]({raw_url}) | [一键导入 Surge]({install_url})")
+        raw_url, install_url = install_url_for_path(item["path"])
+        lines.append(f"| {icon_for_name(item['name'])} | {item['name']} | [Raw]({raw_url}) | [一键导入 Surge]({install_url}) |")
     lines.append("")
     (out_dir / "README.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_root_readme(readme_path: Path, converted: list[dict[str, str]], report: list[dict[str, object]]) -> None:
+    ok = sum(1 for item in report if item["status"] == "ok")
+    needs_review = sum(1 for item in report if item["status"] == "needs-review")
+    failed = sum(1 for item in report if item["status"] == "failed")
+    lines = [
+        "# Kelee Loon Plugins for Surge",
+        "",
+        "This repository contains Surge modules converted from the Loon plugins listed at:",
+        "",
+        "```text",
+        "https://hub.kelee.one/",
+        "```",
+        "",
+        "## One-Tap Import",
+        "",
+        "Open the import links on the device where Surge is installed. The links use an HTTPS bridge so they work from GitHub README pages.",
+        "",
+        f"Converted: {ok}, needs review: {needs_review}, failed: {failed}",
+        "",
+        "| Icon | Module | Raw URL | One-tap import |",
+        "| --- | --- | --- | --- |",
+    ]
+    for item in converted:
+        raw_url, install_url = install_url_for_path(item["path"])
+        lines.append(f"| {icon_for_name(item['name'])} | {item['name']} | [Raw]({raw_url}) | [Import]({install_url}) |")
+    lines.extend(
+        [
+            "",
+            "## Sync",
+            "",
+            "The workflow at `.github/workflows/update-kelee-loon-to-surge.yml` periodically downloads the Loon plugins with a Loon-style User-Agent and regenerates `modules/`, `modules/README.md`, and this README.",
+            "",
+            "Conversion script:",
+            "",
+            "```text",
+            "scripts/convert_kelee_loon_to_surge.py",
+            "```",
+            "",
+            "Source plugins belong to their original authors. This repository only keeps an automatically converted Surge-format mirror.",
+        ]
+    )
+    readme_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main() -> int:
@@ -275,6 +348,7 @@ def main() -> int:
     parser.add_argument("--list-url", default=LIST_URL)
     parser.add_argument("--out-dir", default="generated-surge-modules")
     parser.add_argument("--source-dir", help="Optional directory containing downloaded .lpx files")
+    parser.add_argument("--root-readme", help="Optional root README path to regenerate with the full module list")
     parser.add_argument("--limit", type=int, help="Convert only the first N plugins")
     parser.add_argument("--timeout", type=int, default=30)
     args = parser.parse_args()
@@ -317,6 +391,8 @@ def main() -> int:
         encoding="utf-8",
     )
     write_index(out_dir, converted_index)
+    if args.root_readme:
+        write_root_readme(Path(args.root_readme), converted_index, report)
 
     ok = sum(1 for item in report if item["status"] == "ok")
     needs_review = sum(1 for item in report if item["status"] == "needs-review")

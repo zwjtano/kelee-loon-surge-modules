@@ -17,17 +17,17 @@ jobs:
 
       - name: Convert plugins
         run: |
-          python scripts/convert_kelee_loon_to_surge.py --out-dir modules
+          python scripts/convert_kelee_loon_to_surge.py --out-dir modules --root-readme README.md
 
       - name: Commit changes
         run: |
           cp modules/conversion-report.json conversion-report.json
-          if git diff --quiet -- modules conversion-report.json; then
+          if git diff --quiet -- README.md modules conversion-report.json scripts/convert_kelee_loon_to_surge.py; then
             echo "No changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add modules conversion-report.json
+          git add README.md modules conversion-report.json
           git commit -m "Update converted Kelee Surge modules"
           git push
