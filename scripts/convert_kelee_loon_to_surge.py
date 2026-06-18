@@ -595,7 +595,43 @@ def convert_with_scripthub(items: list[PluginItem], out_dir: Path, timeout: int)
             check=True,
             timeout=max(timeout * max(len(items), 1), 300),
         )
-        return json.loads(report_path.read_text(encoding="utf-8"))
+        report = json.loads(report_path.read_text(encoding="utf-8"))
+    apply_module_postprocess(out_dir, report)
+    return report
+
+
+def apply_module_postprocess(out_dir: Path, report: list[dict[str, object]]) -> None:
+    bilibili_path = out_dir / "Bilibili_remove_ads.sgmodule"
+    if bilibili_path.exists():
+        preserve_bilibili_search(bilibili_path)
+        for entry in report:
+            if Path(str(entry.get("output", ""))).name == "Bilibili_remove_ads.sgmodule":
+                warnings = entry.setdefault("warnings", [])
+                if isinstance(warnings, list):
+                    warnings.append("保留搜索发现和热搜")
+
+
+def preserve_bilibili_search(path: Path) -> None:
+    text = path.read_text(encoding="utf-8")
+    lines = []
+    for line in text.splitlines():
+        if "interface\\.v1\\.(Teenagers\\/ModeStatus|Search\\/DefaultWords)" in line:
+            line = line.replace(
+                "interface\\.v1\\.(Teenagers\\/ModeStatus|Search\\/DefaultWords)",
+                "interface\\.v1\\.Teenagers\\/ModeStatus",
+            )
+        elif "bilibili\\.app\\.interface\\.v1\\.Search\\/DefaultWords" in line:
+            continue
+        if "|v2\\/search\\/square" in line:
+            line = line.replace("|v2\\/search\\/square", "")
+        if "v2\\/search\\/square|" in line:
+            line = line.replace("v2\\/search\\/square|", "")
+        if "|polymer\\.app\\.search\\.v1\\.Search\\/SearchAll" in line:
+            line = line.replace("|polymer\\.app\\.search\\.v1\\.Search\\/SearchAll", "")
+        if "polymer\\.app\\.search\\.v1\\.Search\\/SearchAll|" in line:
+            line = line.replace("polymer\\.app\\.search\\.v1\\.Search\\/SearchAll|", "")
+        lines.append(line)
+    path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
 
 def convert_with_native_converter(

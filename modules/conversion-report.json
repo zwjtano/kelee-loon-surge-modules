@@ -608,7 +608,8 @@
     "output": "modules\\Bilibili_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
-      "Converted by Script-Hub Rewrite-Parser"
+      "Converted by Script-Hub Rewrite-Parser",
+      "保留搜索发现和热搜"
     ]
   },
   {
