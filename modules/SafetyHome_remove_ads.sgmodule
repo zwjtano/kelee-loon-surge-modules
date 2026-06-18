@@ -1,21 +1,18 @@
-#!name=360智慧生活去广告 - Surge
-#!desc=移除开屏广告、首页推广横幅、商城入口及我的页面推广。；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
-#!homepage=https://kelee.one/Tool/Loon/Lpx/SafetyHome_remove_ads.lpx
-#!system=ios
-#!openUrl=https://apps.apple.com/app/id1488904375
+#!name=360智慧生活去广告
+#!desc=移除开屏广告、首页推广横幅、商城入口及我的页面推广。
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag=去广告
-#!system=
-#!system_version=
-#!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SafetyHome.png
+#!openUrl=https://apps.apple.com/app/id1488904375
+#!tag=去广告
+#!loon_version=3.4.0(962)
+#!homepage=https://hub.kelee.one
 #!date=2026-06-01 17:11:35
 
 [Rule]
-DOMAIN, ad.iot.360.cn, REJECT
-
-[MITM]
-hostname = %APPEND% app.home.360.cn
+DOMAIN,ad.iot.360.cn,REJECT
 
 [Map Local]
 ^https:\/\/app\.home\.360\.cn\/v1\/config\/custom_config data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% app.home.360.cn
