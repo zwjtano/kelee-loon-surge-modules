@@ -13,7 +13,9 @@
 
 [URL Rewrite]
 ^https:\/\/api1\.zongheng\.com\/iosapi\/system\/startup$ reject
-^https:\/\/api2\.zongheng\.com\/api\/giftBag\/bindingBag$ reject-dict
 
 [MITM]
 hostname = %APPEND% api?.zongheng.com
+
+[Map Local]
+^https:\/\/api2\.zongheng\.com\/api\/giftBag\/bindingBag$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"

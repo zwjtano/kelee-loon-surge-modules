@@ -39,10 +39,9 @@ DOMAIN, adsmind.ugdtimg.com, REJECT
 DOMAIN, pre-acs.youku.com, REJECT
 DOMAIN, youku-acs.m.taobao.com, REJECT
 
-[URL Rewrite]
-^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get response-body-json-del data.data.ad data.data.watermark data.data.ykad
-
-^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\? response-body-json-del data.tipContent data.tipContentNew
-
 [MITM]
 hostname = %APPEND% push.m.youku.com, un-acs.youku.com
+
+[Body Rewrite]
+http-response-jq ^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get 'delpaths([["data", "data", "ad"], ["data", "data", "watermark"], ["data", "data", "ykad"]])'
+http-response-jq ^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\? 'delpaths([["data", "tipContent"], ["data", "tipContentNew"]])'

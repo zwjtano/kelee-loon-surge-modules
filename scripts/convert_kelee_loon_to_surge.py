@@ -34,6 +34,7 @@ SECTION_MAP = {
 }
 SCRIPT_RE = re.compile(r"^(http-request|http-response|cron|generic)\s+(.+)$")
 SAFE_NAME_RE = re.compile(r"[^A-Za-z0-9._-]+")
+SURGE_INTERNAL_POLICIES = {"DIRECT", "REJECT", "REJECT-TINYGIF"}
 
 
 @dataclass
@@ -121,6 +122,173 @@ def format_options(options: Iterable[tuple[str, str | None]]) -> str:
     return ", ".join(rendered)
 
 
+def unquote_argument_value(value: str) -> str:
+    value = value.strip()
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'"}:
+        return value[1:-1]
+    return value
+
+
+def format_surge_argument_value(value: str) -> str:
+    value = unquote_argument_value(value)
+    if re.fullmatch(r"(true|false|null|-?\d+(?:\.\d+)?)", value):
+        return value
+    return json.dumps(value, ensure_ascii=False)
+
+
+def convert_argument_line(line: str) -> tuple[str, str] | None:
+    stripped = line.strip()
+    if not stripped or stripped.startswith("#") or "=" not in stripped:
+        return None
+    key, raw_options = stripped.split("=", 1)
+    key = key.strip()
+    if not key:
+        return None
+    options = parse_csv_options(raw_options)
+    if len(options) < 2:
+        return None
+    return key, unquote_argument_value(options[1][0])
+
+
+def replace_argument_placeholders(line: str) -> str:
+    return re.sub(r"\{([A-Za-z][A-Za-z0-9_]*)\}", r"{{{\1}}}", line)
+
+
+def convert_rule_line(line: str) -> tuple[str | None, str | None]:
+    stripped = line.strip()
+    if not stripped or stripped.startswith("#"):
+        return line, None
+    parts = [part.strip() for part in line.split(",")]
+    if len(parts) < 2:
+        return line, None
+    policy = parts[-1].split()[0]
+    if policy in SURGE_INTERNAL_POLICIES:
+        return line, None
+    return None, f"Dropped rule with non-built-in policy {policy}"
+
+
+def parse_json_path(path: str) -> list[str | int]:
+    path = path.strip()
+    output: list[str | int] = []
+    for match in re.finditer(r"\.?([^\.\[\]]+)|\[(['\"])(.*?)\2\]|\[(\d+)\]", path):
+        if match.group(1) is not None:
+            output.append(match.group(1))
+        elif match.group(3) is not None:
+            output.append(match.group(3))
+        elif match.group(4) is not None:
+            output.append(int(match.group(4)))
+    return output
+
+
+def inline_jq_value(value: str) -> tuple[str | None, str | None]:
+    match = re.search(r'jq-path="([^"]+)"', value)
+    if not match:
+        return value, None
+    jq_path = match.group(1)
+    if not jq_path.startswith(("http://", "https://")):
+        return None, f"Dropped unsupported local jq-path {jq_path}"
+    jq_text = fetch_text(jq_path, 30)
+    jq_text = re.sub(r"^\s*#.*$", "", jq_text, flags=re.MULTILINE)
+    jq_text = re.sub(r"\r?\n", " ", jq_text).strip()
+    return repr(jq_text), None
+
+
+def option_value(options: str, key: str) -> str | None:
+    match = re.search(rf"(?:^|\s){re.escape(key)}=", options)
+    if not match:
+        return None
+    start = match.end()
+    next_match = re.search(
+        r"\s(?:data-type|status-code|data|data-path|mock-data-is-base64|header)=",
+        options[start:],
+    )
+    end = start + next_match.start() if next_match else len(options)
+    value = options[start:end].strip()
+    if len(value) >= 2 and value[0] == value[-1] == '"':
+        value = value[1:-1]
+    return value
+
+
+def convert_mock_response(pattern: str, rest: str) -> str:
+    data_type = option_value(rest, "data-type") or "text"
+    status_code = option_value(rest, "status-code")
+    data = option_value(rest, "data")
+    data_path = option_value(rest, "data-path")
+    is_base64 = option_value(rest, "mock-data-is-base64") == "true"
+    if is_base64:
+        data_type = "base64"
+    pieces = [pattern, f"data-type={data_type}"]
+    if data is not None:
+        pieces.append(f'data="{data}"')
+    elif data_path is not None:
+        pieces.append(f'data="{data_path}"')
+    elif data_type == "text":
+        pieces.append('data=""')
+    if status_code:
+        pieces.append(f"status-code={status_code}")
+    pieces.append(f'header="Content-Type:{"application/json" if data_type == "json" else "text/plain"}"')
+    return " ".join(pieces)
+
+
+def convert_url_rewrite_line(line: str) -> tuple[str, str, str | None]:
+    stripped = line.strip()
+    if not stripped or stripped.startswith("#"):
+        return "URL Rewrite", line, None
+    parts = stripped.split(maxsplit=2)
+    if len(parts) < 2:
+        return "URL Rewrite", line, None
+    pattern, action = parts[0], parts[1]
+    rest = parts[2] if len(parts) > 2 else ""
+    if pattern in {"http-request", "http-response"} and rest:
+        nested_parts = rest.split(maxsplit=1)
+        if len(nested_parts) == 2:
+            nested_action, nested_value = nested_parts
+            if nested_action == "response-body-json-jq":
+                value, warning = inline_jq_value(nested_value)
+                if value is None:
+                    return "drop", "", warning
+                return "Body Rewrite", f"{pattern}-jq {action} {value}", warning
+    if action == "response-body-json-jq":
+        value, warning = inline_jq_value(rest)
+        if value is None:
+            return "drop", "", warning
+        return "Body Rewrite", f"http-response-jq {pattern} {value}", warning
+    if action == "response-body-json-del":
+        paths = [parse_json_path(item) for item in rest.split() if item.strip()]
+        if not paths:
+            return "drop", "", "Dropped empty JSON delete rewrite"
+        return "Body Rewrite", f"http-response-jq {pattern} 'delpaths({json.dumps(paths, ensure_ascii=False)})'", None
+    if action == "mock-response-body":
+        return "Map Local", convert_mock_response(pattern, rest), None
+    if action == "reject-dict":
+        return "Map Local", f'{pattern} data-type=text data="{{}}" status-code=200 header="Content-Type:application/json"', None
+    if action == "response-header-add":
+        header_parts = rest.split(maxsplit=1)
+        if len(header_parts) == 2:
+            return "Header Rewrite", f"http-response {pattern} header-add {header_parts[0]!r} {header_parts[1]!r}", None
+        return "Header Rewrite", f"http-response {pattern} header-add {rest}", None
+    return "URL Rewrite", line, None
+
+
+def remove_empty_sections(lines: list[str]) -> list[str]:
+    result: list[str] = []
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if re.match(r"^\[[^\]]+\]\s*$", line):
+            section: list[str] = [line]
+            index += 1
+            while index < len(lines) and not re.match(r"^\[[^\]]+\]\s*$", lines[index]):
+                section.append(lines[index])
+                index += 1
+            if any(item.strip() and not item.lstrip().startswith("#") for item in section[1:]):
+                result.extend(section)
+            continue
+        result.append(line)
+        index += 1
+    return result
+
+
 def script_tag(options: list[tuple[str, str | None]], fallback: str) -> tuple[str, list[tuple[str, str | None]]]:
     tag = None
     kept: list[tuple[str, str | None]] = []
@@ -193,6 +361,8 @@ def convert_header(line: str, source_url: str) -> tuple[str | None, list[str]]:
 def convert_lpx_to_surge(text: str, source_url: str, fallback_tag: str) -> ConvertResult:
     warnings: list[str] = []
     output: list[str] = []
+    argument_items: list[tuple[str, str]] = []
+    extra_sections: dict[str, list[str]] = {"Body Rewrite": [], "Map Local": [], "Header Rewrite": []}
     current_section: str | None = None
     inserted_source = False
 
@@ -202,7 +372,16 @@ def convert_lpx_to_surge(text: str, source_url: str, fallback_tag: str) -> Conve
         if section_match:
             section = section_match.group(1).strip()
             current_section = SECTION_MAP.get(section.lower(), section)
+            if section.lower() == "argument":
+                current_section = "Argument"
+                continue
             output.append(f"[{current_section}]")
+            continue
+
+        if current_section == "Argument":
+            argument = convert_argument_line(line)
+            if argument:
+                argument_items.append(argument)
             continue
 
         if line.startswith("#!"):
@@ -217,6 +396,7 @@ def convert_lpx_to_surge(text: str, source_url: str, fallback_tag: str) -> Conve
             continue
 
         if current_section == "Script" and line.strip() and not line.lstrip().startswith("#"):
+            line = replace_argument_placeholders(line)
             converted, warning = convert_script_line(line, fallback_tag)
             output.append(converted)
             if warning:
@@ -230,13 +410,42 @@ def convert_lpx_to_surge(text: str, source_url: str, fallback_tag: str) -> Conve
                 continue
             if stripped.startswith("hostname =") and "%APPEND%" not in stripped:
                 output.append("hostname = %APPEND% " + stripped.split("=", 1)[1].strip())
-                continue
+            continue
 
+        if current_section == "Rule":
+            converted, warning = convert_rule_line(line)
+            if converted is not None:
+                output.append(converted)
+            if warning:
+                warnings.append(f"line {line_no}: {warning}: {line}")
+            continue
+
+        if current_section == "URL Rewrite":
+            target_section, converted, warning = convert_url_rewrite_line(line)
+            if warning:
+                warnings.append(f"line {line_no}: {warning}: {line}")
+            if target_section == "URL Rewrite":
+                output.append(converted)
+            elif target_section != "drop":
+                extra_sections[target_section].append(converted)
+            continue
+
+        line = replace_argument_placeholders(line)
         output.append(line)
 
     if not inserted_source:
         output.insert(0, "#!system=ios")
         output.insert(0, f"#!homepage={source_url}")
+    if argument_items:
+        arguments = ",".join(f"{key}:{format_surge_argument_value(value)}" for key, value in argument_items)
+        insert_at = 0
+        while insert_at < len(output) and output[insert_at].startswith("#!"):
+            insert_at += 1
+        output.insert(insert_at, f"#!arguments={arguments}")
+    for section, section_lines in extra_sections.items():
+        if section_lines:
+            output.extend(["", f"[{section}]", *section_lines])
+    output = remove_empty_sections(output)
 
     return ConvertResult(text="\n".join(output).rstrip() + "\n", warnings=warnings)
 

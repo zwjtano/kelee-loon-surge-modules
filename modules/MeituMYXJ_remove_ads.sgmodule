@@ -15,10 +15,7 @@
 DOMAIN, adui.tg.meitu.com, REJECT
 
 [URL Rewrite]
-^https:\/\/api\.meiyan\.com\/operation\/home_banner\.json\? reject-dict
 
-^https:\/\/api\.meiyan\.com\/vip\/permission_update_popup\.json\? reject-dict
-^https:\/\/api\.meiyan\.com\/operation\/get_config\.json\? response-body-json-del response.time_limit response.bubble response.person_center
 ^https:\/\/api\.meiyan\.com\/operation\/get_config\.json\? response-body-json-replace response.function_pop.meiyan_style.is_pop false response.onoff.vip_half_window_exit_remain_popup.open 0 response.onoff.vip_home_exit_remain_popup 0
 
 [Script]
@@ -26,3 +23,10 @@ DOMAIN, adui.tg.meitu.com, REJECT
 
 [MITM]
 hostname = %APPEND% api.meiyan.com
+
+[Body Rewrite]
+http-response-jq ^https:\/\/api\.meiyan\.com\/operation\/get_config\.json\? 'delpaths([["response", "time_limit"], ["response", "bubble"], ["response", "person_center"]])'
+
+[Map Local]
+^https:\/\/api\.meiyan\.com\/operation\/home_banner\.json\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.meiyan\.com\/vip\/permission_update_popup\.json\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"

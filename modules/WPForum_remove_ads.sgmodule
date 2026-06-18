@@ -11,10 +11,11 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WPForum.png
 #!date=2026-06-01 17:11:35
 
-[URL Rewrite]
-^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/yesList\? reject-dict
-
-^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/slideshow\? response-body-json-jq '.data |= map(select(.protocolId == 1))'
-
 [MITM]
 hostname = %APPEND% api.wfdata.club
+
+[Body Rewrite]
+http-response-jq ^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/slideshow\? '.data |= map(select(.protocolId == 1))'
+
+[Map Local]
+^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/yesList\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"

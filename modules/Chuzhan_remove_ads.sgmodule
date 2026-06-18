@@ -12,20 +12,24 @@
 #!date=2026-06-01 17:11:35
 
 [URL Rewrite]
-^https:\/\/app\.huashi6\.com\/app\/index\/ad\/ reject-dict
 
 ^https:\/\/app\.huashi6\.com\/app\/common\/config$ response-body-json-replace data.disableAd true data.showTopFloatAdvanceTips false
-^https:\/\/app\.huashi6\.com\/app\/common\/config$ response-body-json-del data.adsConfigIOS data.adsConfigAndroid data.url.tabMarket
 
-^https:\/\/app\.huashi6\.com\/app\/common\/layouts$ response-body-json-jq '.data |= {CZ_MINE_MENUS: .CZ_MINE_MENUS}'
 
-^https:\/\/app\.huashi6\.com\/app\/common\/themeConfig$ response-body-json-jq '.data.tabbars |= map(select(.title != "商城"))'
 
-^https:\/\/app\.huashi6\.com\/app\/works\/relative$ reject-dict
 
-^https:\/\/app\.huashi6\.com\/app\/index\/follow\/all_random\/list$ reject-dict
 
-^https:\/\/app\.huashi6\.com\/app\/index\/csyxh\/icon$ reject-dict
 
 [MITM]
 hostname = %APPEND% app.huashi6.com
+
+[Body Rewrite]
+http-response-jq ^https:\/\/app\.huashi6\.com\/app\/common\/config$ 'delpaths([["data", "adsConfigIOS"], ["data", "adsConfigAndroid"], ["data", "url", "tabMarket"]])'
+http-response-jq ^https:\/\/app\.huashi6\.com\/app\/common\/layouts$ '.data |= {CZ_MINE_MENUS: .CZ_MINE_MENUS}'
+http-response-jq ^https:\/\/app\.huashi6\.com\/app\/common\/themeConfig$ '.data.tabbars |= map(select(.title != "商城"))'
+
+[Map Local]
+^https:\/\/app\.huashi6\.com\/app\/index\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/app\.huashi6\.com\/app\/works\/relative$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/app\.huashi6\.com\/app\/index\/follow\/all_random\/list$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/app\.huashi6\.com\/app\/index\/csyxh\/icon$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"

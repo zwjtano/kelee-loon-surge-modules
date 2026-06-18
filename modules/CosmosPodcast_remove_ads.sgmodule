@@ -11,15 +11,14 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/CosmosPodcast.png
 #!date=2026-06-01 17:11:35
 
-[URL Rewrite]
-^https:\/\/api\.xiaoyuzhoufm\.com\/v1\/discovery-feed\/list response-body-json-jq '.data |= map(select(.type != "DISCOVERY_HEADER" and .type != "DISCOVERY_BANNER"))'
-
-^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash reject-dict
-
-^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai reject-dict
-
-^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get reject-dict
-^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category reject-dict
-
 [MITM]
 hostname = %APPEND% api.xiaoyuzhoufm.com
+
+[Body Rewrite]
+http-response-jq ^https:\/\/api\.xiaoyuzhoufm\.com\/v1\/discovery-feed\/list '.data |= map(select(.type != "DISCOVERY_HEADER" and .type != "DISCOVERY_BANNER"))'
+
+[Map Local]
+^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category data-type=text data="{}" status-code=200 header="Content-Type:application/json"

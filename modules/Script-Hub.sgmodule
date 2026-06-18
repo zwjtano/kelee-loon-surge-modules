@@ -14,9 +14,6 @@
 #!input=Parser_body_max
 #!input=Parser_http_timeout
 
-[Rule]
-DOMAIN, scripthub.vercel.app, PROXY
-
 [Script]
 前端界面 = type=http-request, pattern=^https?:\/\/script\.hub\/($|edit\/|reload), script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-hub.js, timeout=300, timeout=300
 

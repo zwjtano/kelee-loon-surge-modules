@@ -14,14 +14,18 @@
 [URL Rewrite]
 ^https:\/\/fcard\.api\.moji\.com\/flycard\/flyCard\? reject
 
-^https:\/\/vdo\.api\.moji\.com\/shortvideo\/card\/subscribe$ reject-dict
-^https:\/\/vdo\.api\.moji\.com\/shortvideo\/video\/index_flow\? reject-dict
-^https:\/\/vdo\.api\.moji\.com\/shortvideo\/video_user\/hotGuyRcm\? reject-dict
-^https:\/\/vdo\.api\.moji\.com\/shortvideo\/zone\/follow_src_zone\? reject-dict
 
-^https:\/\/sns\.api\.moji\.com\/user\/dynamic_v9\/json\/someone_interest\? reject-dict
 
-^https:\/\/mme\.api\.moji\.com\/json\/entrance\/list$ response-body-json-jq 'del(.entrance_region_res_list[] | select(.region_name == "皇冠区域" or .region_name == "banner区")) | .entrance_region_res_list[].entrance_res_list |= if . then map(select(.entrance_name | . != "墨迹钱包" and . != "墨圈")) else . end'
 
 [MITM]
 hostname = %APPEND% fcard.api.moji.com, vdo.api.moji.com, sns.api.moji.com, mme.api.moji.com, psnlz.api.moji.com
+
+[Body Rewrite]
+http-response-jq ^https:\/\/mme\.api\.moji\.com\/json\/entrance\/list$ 'del(.entrance_region_res_list[] | select(.region_name == "皇冠区域" or .region_name == "banner区")) | .entrance_region_res_list[].entrance_res_list |= if . then map(select(.entrance_name | . != "墨迹钱包" and . != "墨圈")) else . end'
+
+[Map Local]
+^https:\/\/vdo\.api\.moji\.com\/shortvideo\/card\/subscribe$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/vdo\.api\.moji\.com\/shortvideo\/video\/index_flow\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/vdo\.api\.moji\.com\/shortvideo\/video_user\/hotGuyRcm\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/vdo\.api\.moji\.com\/shortvideo\/zone\/follow_src_zone\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/sns\.api\.moji\.com\/user\/dynamic_v9\/json\/someone_interest\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"

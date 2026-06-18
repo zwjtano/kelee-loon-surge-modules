@@ -14,18 +14,22 @@
 [URL Rewrite]
 ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-common-proxy-api\/api\/advertising\/proxy\/getOpenScreenAdvertising$ response-body-json-replace data.advertisingList []
 
-^https:\/\/api-changzheng\.chinaath\.com\/changzheng-race-proxy-api\/api\/home\/page\/getBrand$ response-body-json-jq '.data |= map(select(.advertisementName == "路跑赛事" or .advertisementName == "线上赛" or .advertisementName == "越野赛事"))'
-
-^https:\/\/api-changzheng\.chinaath\.com\/changzheng-race-proxy-api\/api\/home\/page\/get$ response-body-json-del data.topHotSearchList data.bannerListTwo data.textAdvertisementList
-
-^https:\/\/api-changzheng\.chinaath\.com\/changzheng-race-proxy-api\/api\/home\/page\/get$ response-body-json-jq '.data.recommendList |= map(select(.raceAdList | not or length == 0))'
-
-^https:\/\/api-changzheng\.chinaath\.com\/changzheng-basic-center-api\/api\/appConfigBanner\/listBannerRelease\? reject-dict
-
-^https:\/\/api-changzheng\.chinaath\.com\/changzheng-content-center-api\/api\/global\/search\/hotSearch\/list$ reject-dict
 
 
-^https:\/\/api-changzheng\.chinaath\.com\/changzheng-basic-center-api\/api\/advertisement\/ reject-dict
+
+
+
+
 
 [MITM]
 hostname = %APPEND% api-changzheng.chinaath.com
+
+[Body Rewrite]
+http-response-jq ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-race-proxy-api\/api\/home\/page\/getBrand$ '.data |= map(select(.advertisementName == "路跑赛事" or .advertisementName == "线上赛" or .advertisementName == "越野赛事"))'
+http-response-jq ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-race-proxy-api\/api\/home\/page\/get$ 'delpaths([["data", "topHotSearchList"], ["data", "bannerListTwo"], ["data", "textAdvertisementList"]])'
+http-response-jq ^https:\/\/api-changzheng\.chinaath\.com\/changzheng-race-proxy-api\/api\/home\/page\/get$ '.data.recommendList |= map(select(.raceAdList | not or length == 0))'
+
+[Map Local]
+^https:\/\/api-changzheng\.chinaath\.com\/changzheng-basic-center-api\/api\/appConfigBanner\/listBannerRelease\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api-changzheng\.chinaath\.com\/changzheng-content-center-api\/api\/global\/search\/hotSearch\/list$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api-changzheng\.chinaath\.com\/changzheng-basic-center-api\/api\/advertisement\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"

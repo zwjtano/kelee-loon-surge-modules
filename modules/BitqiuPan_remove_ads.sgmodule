@@ -11,12 +11,10 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BitqiuPan.png
 #!date=2026-06-01 17:11:35
 
-[URL Rewrite]
-^https:\/\/pan-api\.bitqiu\.com\/activity\/getPromoteGuide$ reject-dict
-
-^http:\/\/pan-api\.bitqiu\.com\/activity\/getUrlList$ reject-dict
-
-^https:\/\/pan-api\.bitqiu\.com\/activity\/guides$ reject-dict
-
 [MITM]
 hostname = %APPEND% pan-api.bitqiu.com
+
+[Map Local]
+^https:\/\/pan-api\.bitqiu\.com\/activity\/getPromoteGuide$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^http:\/\/pan-api\.bitqiu\.com\/activity\/getUrlList$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/pan-api\.bitqiu\.com\/activity\/guides$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"

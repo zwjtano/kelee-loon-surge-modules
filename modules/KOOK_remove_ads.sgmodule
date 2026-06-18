@@ -12,15 +12,19 @@
 #!date=2026-06-01 17:11:35
 
 [URL Rewrite]
-^https:\/\/www\.kookapp\.cn\/api\/v3\/ad\/config$ reject-dict
 
-^https:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ response-body-json-del ad_banner advertise_on_off
 
 ^https:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ response-body-json-replace ios_mall_switch false
 
-^https:\/\/www\.kookapp\.cn\/api\/v3\/promotion\/ongoing$ reject-dict
 
-^https:\/\/www\.kookapp\.cn\/api\/v3\/discover\/tab-list\? response-body-json-jq '.data.items |= map(select(.id == 472 or .id == 473 or .id == 475))'
 
 [MITM]
 hostname = %APPEND% m.kookapp.cn, www.kookapp.cn
+
+[Body Rewrite]
+http-response-jq ^https:\/\/(m|www)\.kookapp\.cn\/api\/v\d\/user\/settings$ 'delpaths([["ad_banner"], ["advertise_on_off"]])'
+http-response-jq ^https:\/\/www\.kookapp\.cn\/api\/v3\/discover\/tab-list\? '.data.items |= map(select(.id == 472 or .id == 473 or .id == 475))'
+
+[Map Local]
+^https:\/\/www\.kookapp\.cn\/api\/v3\/ad\/config$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/www\.kookapp\.cn\/api\/v3\/promotion\/ongoing$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"

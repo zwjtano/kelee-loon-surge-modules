@@ -15,10 +15,7 @@
 DOMAIN, render-web.11222.cn, REJECT
 
 [URL Rewrite]
-^https:\/\/huichuan\.sm\.cn\/nativead reject-dict
 
-^https:\/\/ocean\.shuqireader\.com\/api\/route\/iosReadPage\/adV2 reject-dict
-^https:\/\/ocean\.shuqireader\.com\/api\/route\/ios\/readPage$ reject-dict
 ^https:\/\/ocean\.shuqireader\.com\/api\/render\/load\/resource reject
 
 [Script]
@@ -26,3 +23,8 @@ DOMAIN, render-web.11222.cn, REJECT
 
 [MITM]
 hostname = %APPEND% ocean.shuqireader.com, huichuan.sm.cn
+
+[Map Local]
+^https:\/\/huichuan\.sm\.cn\/nativead data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/ocean\.shuqireader\.com\/api\/route\/iosReadPage\/adV2 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/ocean\.shuqireader\.com\/api\/route\/ios\/readPage$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"

@@ -11,8 +11,8 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiShiJie.png
 #!date=2026-06-01 17:11:35
 
-[URL Rewrite]
-^https:\/\/newapi\.meishi\.cc\/indexnew\/home_feeds response-body-json-jq 'if .data.items then .data.items |= map(select(.type | . != "101" and . != "12")) else . end'
-
 [MITM]
 hostname = %APPEND% newapi.meishi.cc
+
+[Body Rewrite]
+http-response-jq ^https:\/\/newapi\.meishi\.cc\/indexnew\/home_feeds 'if .data.items then .data.items |= map(select(.type | . != "101" and . != "12")) else . end'

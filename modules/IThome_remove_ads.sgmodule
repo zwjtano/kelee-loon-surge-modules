@@ -10,16 +10,13 @@
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/IThome.png
 #!date=2026-06-01 17:11:35
-
-[Argument]
-removePinnedArticles = switch, false, true, tag=移除置顶文章, desc=启用后将移除置顶文章
-removeAllBanners = switch, false, true, tag=移除全部横幅, desc=启用后将移除全部横幅
+#!arguments=removePinnedArticles:false,removeAllBanners:false
 
 [URL Rewrite]
 ^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ reject
 
 [Script]
-IT之家去广告 = type=http-response, pattern=^https:\/\/napi\.ithome\.com\/api\/(news\/indexv2\/iphone\/\d+|topmenu\/getfeeds\?), script-path=https://kelee.one/Resource/JavaScript/IThome/IThome_remove_ads.js, requires-body=true, argument=[{removeAllBanners}, {removePinnedArticles}]
+IT之家去广告 = type=http-response, pattern=^https:\/\/napi\.ithome\.com\/api\/(news\/indexv2\/iphone\/\d+|topmenu\/getfeeds\?), script-path=https://kelee.one/Resource/JavaScript/IThome/IThome_remove_ads.js, requires-body=true, argument=[{{{removeAllBanners}}}, {{{removePinnedArticles}}}]
 
 [MITM]
 hostname = %APPEND% napi.ithome.com, api.zuihuimai.com, dat.ruanmei.com

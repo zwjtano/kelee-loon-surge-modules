@@ -11,12 +11,10 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/NarwelRobots.png
 #!date=2026-06-01 17:11:35
 
-[URL Rewrite]
-^https:\/\/cn-app\.narwaltech\.com\/operate\/appPosition\/listSplash\? reject-dict
-
-^https:\/\/cn-app\.narwaltech\.com\/operate\/cactivity\/listByResourceIds\?resourceIds=(user_center_banner|index_banner) reject-dict
-
-^https:\/\/store\.narwal\.com\/mall\/customPage\/getByPageKeyword\? reject-dict
-
 [MITM]
 hostname = %APPEND% cn-app.narwaltech.com, store.narwal.com
+
+[Map Local]
+^https:\/\/cn-app\.narwaltech\.com\/operate\/appPosition\/listSplash\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/cn-app\.narwaltech\.com\/operate\/cactivity\/listByResourceIds\?resourceIds=(user_center_banner|index_banner) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/store\.narwal\.com\/mall\/customPage\/getByPageKeyword\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"

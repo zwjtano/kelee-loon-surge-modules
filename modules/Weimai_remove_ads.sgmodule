@@ -13,7 +13,9 @@
 
 [URL Rewrite]
 ^https:\/\/confssl\d?\.iweimai\.cn\/wm_ios_update\.json\? response-body-json-replace isShowCJAd 0
-^https:\/\/confssl\d?\.iweimai\.cn\/wm_ios_update\.json\? response-body-json-del launchAd adBanners ad
 
 [MITM]
 hostname = %APPEND% confssl*.iweimai.cn
+
+[Body Rewrite]
+http-response-jq ^https:\/\/confssl\d?\.iweimai\.cn\/wm_ios_update\.json\? 'delpaths([["launchAd"], ["adBanners"], ["ad"]])'

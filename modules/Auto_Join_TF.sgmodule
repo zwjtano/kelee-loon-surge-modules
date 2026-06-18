@@ -11,18 +11,9 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TestFlight.png
 #!input=App_ID
 #!date=2026-06-01 17:11:35
-
-[Argument]
-CaptureAccountToken=switch, false, true, tag=捕获账号令牌, desc=此开关控制插件是否捕获账户令牌
-RunTask=switch, "false", "true", tag=自动加入TF, desc=此开关控制是否启动定时任务
-RunMonitor=switch, "true", "false", tag=监控TF位置, desc=此开关控制是否启动定时任务
-TaskCron=input, "0 0/2 * * * ?", tag=加入TF定时参数, desc=这里需要输入符合CRON表达式的参数
-TaskMonitor=input, "0 * * * * ?", tag=监控TF定时参数, desc=这里需要输入符合CRON表达式的参数
-
-[Rule]
-DOMAIN, testflight.apple.com, PROXY
+#!arguments=CaptureAccountToken:false,RunTask:false,RunMonitor:true,TaskCron:"0 0/2 * * * ?",TaskMonitor:"0 * * * * ?"
 
 [Script]
-获取账号令牌 = type=http-request, pattern=^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$, script-path=https://kelee.one/Resource/JavaScript/TestFlight/CaptureAccountToken.js, enable={CaptureAccountToken}
-自动加入TF = type=cron, cronexp={TaskCron}, script-path=https://kelee.one/Resource/JavaScript/TestFlight/AutoJoinTF.js, timeout=600, enable={RunTask}
-监控TF位置 = type=cron, cronexp={TaskMonitor}, script-path=https://kelee.one/Resource/JavaScript/TestFlight/AutoMonitorTF.js, timeout=30, enable={RunMonitor}
+获取账号令牌 = type=http-request, pattern=^https?:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/apps$, script-path=https://kelee.one/Resource/JavaScript/TestFlight/CaptureAccountToken.js, enable={{{CaptureAccountToken}}}
+自动加入TF = type=cron, cronexp={{{TaskCron}}}, script-path=https://kelee.one/Resource/JavaScript/TestFlight/AutoJoinTF.js, timeout=600, enable={{{RunTask}}}
+监控TF位置 = type=cron, cronexp={{{TaskMonitor}}}, script-path=https://kelee.one/Resource/JavaScript/TestFlight/AutoMonitorTF.js, timeout=30, enable={{{RunMonitor}}}

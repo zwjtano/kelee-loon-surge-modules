@@ -11,14 +11,6 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Uki.png
 #!date=2026-06-01 17:11:35
 
-[URL Rewrite]
-^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/startInfo$ reject-dict
-^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/indexBanner$ reject-dict
-^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/getPopup reject-dict
-^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/allPopUpConfig$ reject-dict
-^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/advConf$ reject-dict
-^https:\/\/api\.chenlongtech\.cn\/v\d\/user\/checkQTSheInsurance$ reject-dict
-
 [Script]
 移除匹配卡横幅 = type=http-response, pattern=^https:\/\/api\.chenlongtech\.cn\/v\d\/lover\/productList, script-path=https://kelee.one/Resource/JavaScript/Uki/Uki_remove_ads.js, requires-body=true
 
@@ -30,3 +22,11 @@
 
 [MITM]
 hostname = %APPEND% api.chenlongtech.cn
+
+[Map Local]
+^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/startInfo$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/indexBanner$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/getPopup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/allPopUpConfig$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.chenlongtech\.cn\/v\d\/friends\/advConf$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/api\.chenlongtech\.cn\/v\d\/user\/checkQTSheInsurance$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"

@@ -11,16 +11,14 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaojukejiCharge.png
 #!date=2026-06-01 17:11:35
 
-[URL Rewrite]
-^https:\/\/energy\.xiaojukeji\.com\/energy\/hummer\/api\/resource\/display($|\?) reject-dict
-
-^https:\/\/energy\.xiaojukeji\.com\/am\/marketing\/api\/member\/facade\/charge\/personal\/center\? response-body-json-del data
-
-^https:\/\/energy\.xiaojukeji\.com\/lego\/api\/orderSprint\/stair\/info($|\?) reject-dict
-
-^https:\/\/energy\.xiaojukeji\.com\/station-api\/search\/preWords$ reject-dict
-
-^https:\/\/am\.didistatic\.com\/static\/am\/cf-terminal\/epower\/epower-thanos-app\/\d+\.\d+\.\d+\/pages\/people\/index\.js$ mock-response-body data-type=text data-path="https://kelee.one/Resource/JavaScript/XiaojukejiCharge/XiaojukejiCharge_remove_ads.js" status-code=200
-
 [MITM]
 hostname = %APPEND% energy.xiaojukeji.com, am.didistatic.com
+
+[Body Rewrite]
+http-response-jq ^https:\/\/energy\.xiaojukeji\.com\/am\/marketing\/api\/member\/facade\/charge\/personal\/center\? 'delpaths([["data"]])'
+
+[Map Local]
+^https:\/\/energy\.xiaojukeji\.com\/energy\/hummer\/api\/resource\/display($|\?) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/energy\.xiaojukeji\.com\/lego\/api\/orderSprint\/stair\/info($|\?) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/energy\.xiaojukeji\.com\/station-api\/search\/preWords$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/am\.didistatic\.com\/static\/am\/cf-terminal\/epower\/epower-thanos-app\/\d+\.\d+\.\d+\/pages\/people\/index\.js$ data-type=text data="https://kelee.one/Resource/JavaScript/XiaojukejiCharge/XiaojukejiCharge_remove_ads.js" status-code=200 header="Content-Type:text/plain"

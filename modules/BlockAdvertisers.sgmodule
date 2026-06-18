@@ -143,7 +143,6 @@ DOMAIN-SUFFIX, gdt.qq.com, REJECT
 DOMAIN-SUFFIX, l.qq.com, REJECT
 DOMAIN-SUFFIX, imtmp.net, REJECT
 DOMAIN-SUFFIX, ugdtimg.com, REJECT
-IP-CIDR, 47.110.187.87/32, REJECT, no-resolve
 
 DOMAIN-SUFFIX, opadlink.com, REJECT
 DOMAIN-SUFFIX, staevent.work, REJECT
