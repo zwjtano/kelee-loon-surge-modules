@@ -15,9 +15,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       - name: Convert plugins
         run: |
-          python scripts/convert_kelee_loon_to_surge.py --out-dir modules --root-readme README.md
+          python scripts/convert_kelee_loon_to_surge.py --converter scripthub --out-dir modules --root-readme README.md
 
       - name: Commit changes
         run: |

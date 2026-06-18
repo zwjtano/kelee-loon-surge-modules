@@ -12,7 +12,9 @@ import argparse
 import csv
 import json
 import re
+import subprocess
 import sys
+import tempfile
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass, field
@@ -23,6 +25,7 @@ from typing import Iterable
 LIST_URL = "https://hub.kelee.one/list.json"
 RAW_MODULE_BASE_URL = "https://raw.githubusercontent.com/zwjtano/kelee-loon-surge-modules/master/modules"
 SURGE_INSTALL_BRIDGE_URL = "https://link.lxya.de/surge/install-module"
+SCRIPT_HUB_REWRITE_PARSER = "https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/Rewrite-Parser.js"
 USER_AGENT = "Loon/3.4.0 CFNetwork/1496.0.7 Darwin/23.5.0"
 SECTION_MAP = {
     "rewrite": "URL Rewrite",
@@ -552,26 +555,40 @@ def write_root_readme(readme_path: Path, converted: list[dict[str, str]], report
     readme_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--list-url", default=LIST_URL)
-    parser.add_argument("--out-dir", default="generated-surge-modules")
-    parser.add_argument("--source-dir", help="Optional directory containing downloaded .lpx files")
-    parser.add_argument("--root-readme", help="Optional root README path to regenerate with the full module list")
-    parser.add_argument("--limit", type=int, help="Convert only the first N plugins")
-    parser.add_argument("--timeout", type=int, default=30)
-    args = parser.parse_args()
+def convert_with_scripthub(items: list[PluginItem], out_dir: Path, timeout: int) -> list[dict[str, object]]:
+    helper = Path(__file__).with_name("scripthub_convert.js")
+    payload = []
+    for item in items:
+        stem = safe_stem(item.plugin_url, item.name)
+        payload.append(
+            {
+                "name": item.name,
+                "plugin_url": item.plugin_url,
+                "output_name": f"{stem}.sgmodule",
+            }
+        )
 
-    out_dir = Path(args.out_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
-    source_dir = Path(args.source_dir) if args.source_dir else None
+    with tempfile.TemporaryDirectory() as tmp_dir:
+        items_path = Path(tmp_dir) / "items.json"
+        report_path = Path(tmp_dir) / "report.json"
+        parser_path = Path(tmp_dir) / "Rewrite-Parser.js"
+        items_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        parser_path.write_text(fetch_text(SCRIPT_HUB_REWRITE_PARSER, timeout), encoding="utf-8")
+        subprocess.run(
+            ["node", str(helper), str(items_path), str(out_dir), str(report_path), str(parser_path)],
+            check=True,
+            timeout=max(timeout * max(len(items), 1), 300),
+        )
+        return json.loads(report_path.read_text(encoding="utf-8"))
+
+
+def convert_with_native_converter(
+    items: list[PluginItem],
+    out_dir: Path,
+    source_dir: Path | None,
+    timeout: int,
+) -> list[dict[str, object]]:
     report: list[dict[str, object]] = []
-    converted_index: list[dict[str, str]] = []
-
-    items = load_plugin_list(args.list_url, args.timeout)
-    if args.limit:
-        items = items[: args.limit]
-
     for item in items:
         stem = safe_stem(item.plugin_url, item.name)
         output_path = out_dir / f"{stem}.sgmodule"
@@ -583,17 +600,57 @@ def main() -> int:
             "warnings": [],
         }
         try:
-            source = read_source(item, source_dir, args.timeout)
+            source = read_source(item, source_dir, timeout)
             result = convert_lpx_to_surge(source, item.plugin_url, stem)
             output_path.write_text(result.text, encoding="utf-8")
             entry["warnings"] = result.warnings
-            converted_index.append({"name": item.name, "path": output_path.name, "icon_url": item.icon_url})
             if result.warnings:
                 entry["status"] = "needs-review"
         except Exception as exc:  # noqa: BLE001 - report every plugin independently.
             entry["status"] = "failed"
             entry["error"] = str(exc)
         report.append(entry)
+    return report
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--list-url", default=LIST_URL)
+    parser.add_argument("--out-dir", default="generated-surge-modules")
+    parser.add_argument("--source-dir", help="Optional directory containing downloaded .lpx files")
+    parser.add_argument("--root-readme", help="Optional root README path to regenerate with the full module list")
+    parser.add_argument("--converter", choices=["scripthub", "native"], default="scripthub")
+    parser.add_argument("--limit", type=int, help="Convert only the first N plugins")
+    parser.add_argument("--timeout", type=int, default=30)
+    args = parser.parse_args()
+
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    source_dir = Path(args.source_dir) if args.source_dir else None
+
+    items = load_plugin_list(args.list_url, args.timeout)
+    if args.limit:
+        items = items[: args.limit]
+
+    if args.converter == "scripthub":
+        report = convert_with_scripthub(items, out_dir, args.timeout)
+    else:
+        report = convert_with_native_converter(items, out_dir, source_dir, args.timeout)
+
+    items_by_output = {f"{safe_stem(item.plugin_url, item.name)}.sgmodule": item for item in items}
+    converted_index: list[dict[str, str]] = []
+    for entry in report:
+        if entry["status"] == "failed":
+            continue
+        output_name = Path(str(entry["output"])).name
+        item = items_by_output.get(output_name)
+        converted_index.append(
+            {
+                "name": str(entry["name"]),
+                "path": output_name,
+                "icon_url": item.icon_url if item else "",
+            }
+        )
 
     (out_dir / "conversion-report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n",
