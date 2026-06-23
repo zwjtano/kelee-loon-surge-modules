@@ -1,26 +1,41 @@
-#!name=阅友去广告 - Surge
-#!desc=移除开屏广告、弹窗广告和阅读页面广告，移除底栏福利按钮。；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
-#!homepage=https://kelee.one/Tool/Loon/Lpx/Yueyou_remove_ads.lpx
-#!system=ios
-#!openUrl=https://apps.apple.com/app/id1066723192
+#!name=阅友去广告
+#!desc=移除开屏广告、弹窗广告和阅读页面广告，移除底栏福利按钮。
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag=去广告
-#!system=
-#!system_version=
-#!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Yueyou.png
+#!openUrl=https://apps.apple.com/app/id1066723192
+#!tag=去广告
+#!loon_version=3.4.0(962)
+#!homepage=https://hub.kelee.one
 #!date=2026-06-01 17:11:35
 #!category=zwjtano
 
 [Rule]
-DOMAIN, ads.reader.yueyouxs.com, REJECT
+DOMAIN,ads.reader.yueyouxs.com,REJECT
 
-[URL Rewrite]
-
-^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? response-body-json-replace data.isAdClosed true
+[Body Rewrite]
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","isShowDLPopup"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","isShowGame"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","touTiaoShowDlPopup"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","offLineDownload","WatchVideoBtnDesc"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","readVipFirstCfg"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","readVipNormalCfg"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","notifyAd"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","hotStartSplashTime"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","hotStartReqSwitch"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","isShowBFTab"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","popReqDelayTime"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","benefitCfg"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","chestTask"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","hotStartAd"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","activeTagList"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","secondOrderCfg"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","secondOrderList"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","blockedWordsCfg"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","aaReportListCfg"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","pddAdSwitch"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","isShowShelfAuthPopup"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data","firstPopUpAmount"]])'
+http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'if (getpath(["data"]) | has("isAdClosed")) then (setpath(["data","isAdClosed"]; true)) else . end'
 
 [MITM]
 hostname = %APPEND% goway.reader.yueyouxs.com
-
-[Body Rewrite]
-http-response-jq ^https:\/\/goway\.reader\.yueyouxs\.com\/assemble\/app\/basic\/getAppInfo\? 'delpaths([["data", "isShowDLPopup"], ["data", "isShowGame"], ["data", "touTiaoShowDlPopup"], ["data", "offLineDownload", "WatchVideoBtnDesc"], ["data", "readVipFirstCfg"], ["data", "readVipNormalCfg"], ["data", "notifyAd"], ["data", "hotStartSplashTime"], ["data", "hotStartReqSwitch"], ["data", "isShowBFTab"], ["data", "popReqDelayTime"], ["data", "benefitCfg"], ["data", "chestTask"], ["data", "hotStartAd"], ["data", "activeTagList"], ["data", "secondOrderCfg"], ["data", "secondOrderList"], ["data", "blockedWordsCfg"], ["data", "aaReportListCfg"], ["data", "pddAdSwitch"], ["data", "isShowShelfAuthPopup"], ["data", "firstPopUpAmount"]])'

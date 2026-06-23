@@ -1,19 +1,17 @@
-#!name=滴答出行去广告 - Surge
-#!desc=移除开屏广告、弹窗广告、横幅广告，精简底栏和我的页面。；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
-#!homepage=https://kelee.one/Tool/Loon/Lpx/DidaPincheTaxi_remove_ads.lpx
-#!system=ios
-#!openUrl=https://apps.apple.com/app/id921478733
+#!name=滴答出行去广告
+#!desc=移除开屏广告、弹窗广告、横幅广告，精简底栏和我的页面。
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag=去广告
-#!system=iOS, iPadOS
-#!system_version=
-#!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DidaPincheTaxi.png
+#!openUrl=https://apps.apple.com/app/id921478733
+#!tag=去广告
+#!system=ios
+#!loon_version=3.4.0(962)
+#!homepage=https://hub.kelee.one
 #!date=2026-06-01 17:11:35
 #!category=zwjtano
 
-[MITM]
-hostname = %APPEND% capis.didapinche.com
-
 [Map Local]
 ^https:\/\/capis\.didapinche\.com\/adbase\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% capis.didapinche.com

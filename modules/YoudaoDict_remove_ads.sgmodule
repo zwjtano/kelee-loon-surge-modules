@@ -1,28 +1,25 @@
-#!name=网易有道词典去广告 - Surge
-#!desc=移除开屏广告、弹窗广告、右上角推广。；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
-#!homepage=https://kelee.one/Tool/Loon/Lpx/YoudaoDict_remove_ads.lpx
-#!system=ios
-#!openUrl=https://apps.apple.com/app/id353115739
+#!name=网易有道词典去广告
+#!desc=移除开屏广告、弹窗广告、右上角推广。
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag=去广告
-#!system=
-#!system_version=
-#!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YoudaoDict.png
+#!openUrl=https://apps.apple.com/app/id353115739
+#!tag=去广告
+#!loon_version=3.4.0(962)
+#!homepage=https://hub.kelee.one
 #!date=2026-06-01 17:11:35
 #!category=zwjtano
 
-[Rule]
-ad-sdk-config.youdao.com
-
-[MITM]
-hostname = %APPEND% dict.youdao.com
-
 [Body Rewrite]
-http-response-jq ^https:\/\/dict\.youdao\.com\/homepage\/toolbar\/get\/ 'delpaths([["data", "vipTag"]])'
+http-response-jq ^https:\/\/dict\.youdao\.com\/homepage\/toolbar\/get\/ 'delpaths([["data","vipTag"]])'
 
 [Map Local]
 ^https:\/\/dict\.youdao\.com\/vip\/activity\/startup\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 ^https:\/\/dict\.youdao\.com\/vip\/activity\/retention\/configs\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 ^https:\/\/dict\.youdao\.com\/vip\/activity\/retention\/match\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 ^https:\/\/dict\.youdao\.com\/vip\/user\/paid\/guide\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% dict.youdao.com

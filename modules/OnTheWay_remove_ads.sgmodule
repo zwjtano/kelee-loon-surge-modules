@@ -1,24 +1,22 @@
-#!name=行者户外去广告 - Surge
-#!desc=移除弹窗广告、发现页面横幅推广的推广金刚位，移除我的页面横幅推广。；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
-#!homepage=https://kelee.one/Tool/Loon/Lpx/OnTheWay_remove_ads.lpx
-#!system=ios
-#!openUrl=https://apps.apple.com/app/id779325629
+#!name=行者户外去广告
+#!desc=移除弹窗广告、发现页面横幅推广的推广金刚位，移除我的页面横幅推广。
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!tag=去广告
-#!system=
-#!system_version=
-#!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OnTheWay.png
+#!openUrl=https://apps.apple.com/app/id779325629
+#!tag=去广告
+#!loon_version=3.4.0(962)
+#!homepage=https://hub.kelee.one
 #!date=2026-06-01 17:11:35
 #!category=zwjtano
 
-[MITM]
-hostname = %APPEND% www.imxingzhe.com
-
 [Body Rewrite]
 http-response-jq ^https:\/\/www\.imxingzhe\.com\/api\/v4\/account\/get_user_info\? 'delpaths([["banner"]])'
-http-response-jq ^https:\/\/www\.imxingzhe\.com\/api\/v4\/discovery\/ios\/\? 'delpaths([["banners"], ["ad"]])'
+http-response-jq ^https:\/\/www\.imxingzhe\.com\/api\/v4\/discovery\/ios\/\? 'delpaths([["banners"]])'
+http-response-jq ^https:\/\/www\.imxingzhe\.com\/api\/v4\/discovery\/ios\/\? 'delpaths([["ad"]])'
 http-response-jq ^https:\/\/www\.imxingzhe\.com\/api\/v4\/discovery\/ios\/\? '.display_areas |= map(select(.name == "赛事" or .name == "行者帮" or .name == "头条" or .name == "排行榜" or .name == "约伴"))'
 
 [Map Local]
 ^https:\/\/www\.imxingzhe\.com\/api\/v1\/pop\/window\/\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% www.imxingzhe.com
