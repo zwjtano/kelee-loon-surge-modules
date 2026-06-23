@@ -1,15 +1,19 @@
-#!name=RQrun去广告
-#!desc=移除开屏广告
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/RQrun.png
+#!name=RQrun去广告 - Surge
+#!desc=移除开屏广告；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
+#!homepage=https://kelee.one/Tool/Loon/Lpx/RQrun_remove_ads.lpx
+#!system=ios
 #!openUrl=https://apps.apple.com/app/id1441094296
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
-#!loon_version=3.4.0(962)
+#!system=
+#!system_version=
 #!homepage=https://hub.kelee.one
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/RQrun.png
 #!date=2026-06-01 17:11:35
-
-[Map Local]
-^https:\/\/api\.rq\.run\/Api\/Spreadimg\/spreadimg_type_list$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+#!category=zwjtano
 
 [MITM]
 hostname = %APPEND% api.rq.run
+
+[Map Local]
+^https:\/\/api\.rq\.run\/Api\/Spreadimg\/spreadimg_type_list$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"

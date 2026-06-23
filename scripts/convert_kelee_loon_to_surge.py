@@ -601,6 +601,7 @@ def convert_with_scripthub(items: list[PluginItem], out_dir: Path, timeout: int)
 
 
 def apply_module_postprocess(out_dir: Path, report: list[dict[str, object]]) -> None:
+    apply_module_category(out_dir)
     bilibili_path = out_dir / "Bilibili_remove_ads.sgmodule"
     if bilibili_path.exists():
         preserve_bilibili_search(bilibili_path)
@@ -609,6 +610,32 @@ def apply_module_postprocess(out_dir: Path, report: list[dict[str, object]]) -> 
                 warnings = entry.setdefault("warnings", [])
                 if isinstance(warnings, list):
                     warnings.append("保留搜索发现和热搜")
+
+
+def apply_module_category(out_dir: Path) -> None:
+    for path in sorted(out_dir.glob("*.sgmodule")):
+        set_module_category(path, "zwjtano")
+
+
+def set_module_category(path: Path, category: str) -> None:
+    lines = path.read_text(encoding="utf-8").splitlines()
+    output: list[str] = []
+    inserted = False
+    replaced = False
+    for index, line in enumerate(lines):
+        if line.startswith("#!category"):
+            if not replaced:
+                output.append(f"#!category={category}")
+                replaced = True
+                inserted = True
+            continue
+        if not inserted and not line.startswith("#!"):
+            output.append(f"#!category={category}")
+            inserted = True
+        output.append(line)
+    if not inserted:
+        output.append(f"#!category={category}")
+    path.write_text("\n".join(output).rstrip() + "\n", encoding="utf-8")
 
 
 def preserve_bilibili_search(path: Path) -> None:

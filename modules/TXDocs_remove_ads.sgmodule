@@ -1,17 +1,20 @@
-#!name=腾讯文档去广告
-#!desc=移除开屏广告、首页横幅推广。
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TXDocs.png
+#!name=腾讯文档去广告 - Surge
+#!desc=移除开屏广告、首页横幅推广。；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
+#!homepage=https://kelee.one/Tool/Loon/Lpx/TXDocs_remove_ads.lpx
+#!system=ios
 #!openUrl=https://apps.apple.com/app/id1370780836
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
-#!loon_version=3.4.0(962)
+#!system=
+#!system_version=
 #!homepage=https://hub.kelee.one
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TXDocs.png
 #!date=2026-06-01 17:11:35
-
-[Map Local]
-^https:\/\/tianshu\.qq\.com\/open\/ts_access\/GetAds\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-^https:\/\/h5\.qzone\.qq\.com\/p\/adboss\/api\/json\/ts_access\/GetAds$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+#!category=zwjtano
 
 [MITM]
 hostname = %APPEND% tianshu.qq.com, h5.qzone.qq.com
+
+[Map Local]
+^https:\/\/tianshu\.qq\.com\/open\/ts_access\/GetAds\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/h5\.qzone\.qq\.com\/p\/adboss\/api\/json\/ts_access\/GetAds$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"

@@ -1,12 +1,16 @@
-#!name=BoxJs
-#!desc=JavaScript数据管理器，用于管理脚本储存的数据。使用前请在本插件的详情页面为[PROXY]项分配代理策略。
-#!author=chavyleung[https://github.com/chavyleung]
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/BoxJS.png
+#!name=BoxJs - Surge
+#!desc=JavaScript数据管理器，用于管理脚本储存的数据。使用前请在本插件的详情页面为[PROXY]项分配代理策略。；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
+#!homepage=https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx
+#!system=ios
 #!openUrl=http://boxjs.com
+#!author=chavyleung[https://github.com/chavyleung]
 #!tag=数据管理
-#!loon_version=3.4.0(962)
+#!system=
+#!system_version=
 #!homepage=https://hub.kelee.one
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/BoxJS.png
 #!date=2026-06-01 17:11:35
+#!category=zwjtano
 
 [Script]
 BoxJS = type=http-request, pattern=^https?:\/\/(.+\.)?boxjs\.(com|net), script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120

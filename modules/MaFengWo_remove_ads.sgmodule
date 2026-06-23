@@ -1,15 +1,22 @@
-#!name=马蜂窝去广告
-#!desc=移除首页信息流广告、商城横幅推广、我的页面弹窗。
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MaFengWo.png
+#!name=马蜂窝去广告 - Surge
+#!desc=移除首页信息流广告、商城横幅推广、我的页面弹窗。；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
+#!homepage=https://kelee.one/Tool/Loon/Lpx/MaFengWo_remove_ads.lpx
+#!system=ios
 #!openUrl=https://apps.apple.com/app/id406596432
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
-#!loon_version=3.4.0(962)
+#!system=
+#!system_version=
 #!homepage=https://hub.kelee.one
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MaFengWo.png
 #!date=2026-06-01 17:11:35
+#!category=zwjtano
 
 [Rule]
-DOMAIN,advert.mafengwo.cn,REJECT
+DOMAIN, advert.mafengwo.cn, REJECT
+
+[MITM]
+hostname = %APPEND% mapi.mafengwo.cn
 
 [Body Rewrite]
 http-response-jq ^https:\/\/mapi\.mafengwo\.cn\/discovery\/get_index\/v7\? '.data.list |= map(select(.data.business_type != "gdcpm"))'
@@ -17,6 +24,3 @@ http-response-jq ^https:\/\/mapi\.mafengwo\.cn\/sales\/home\/get_header\/v3\? '.
 
 [Map Local]
 ^https:\/\/mapi\.mafengwo\.cn\/user\/growth\/get_growth_tip\/v1\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-[MITM]
-hostname = %APPEND% mapi.mafengwo.cn

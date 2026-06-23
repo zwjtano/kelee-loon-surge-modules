@@ -1,23 +1,23 @@
-#!name=摩天轮去广告
-#!desc=移除开屏广告、弹窗，精简底栏。
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
-#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FerrisWheel.png
+#!name=摩天轮去广告 - Surge
+#!desc=移除开屏广告、弹窗，精简底栏。；由 Loon 插件自动转换为 Surge 模块，建议导入前抽查。
+#!homepage=https://kelee.one/Tool/Loon/Lpx/FerrisWheel_remove_ads.lpx
+#!system=ios
 #!openUrl=https://apps.apple.com/app/id1054861613
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!tag=去广告
-#!loon_version=3.4.0(962)
+#!system=
+#!system_version=
 #!homepage=https://hub.kelee.one
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FerrisWheel.png
 #!date=2026-06-02 02:30:18
-
-[Map Local]
-^https:\/\/appapi\.motianlun\.cn\/showapi\/pub\/site\/\d+\/app\/loading\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-^https:\/\/appapi\.motianlun\.cn\/showapi\/pub\/site\/\d+\/banner\/app\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-^https:\/\/appapi\.motianlun\.cn\/userdataapi\/pub\/v\d\/top\/keywords\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-^https:\/\/appapi\.motianlun\.cn\/buyerapi\/buyer\/v\d\/search\/index\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-^https:\/\/appapi\.motianlun\.cn\/showapi\/site\/\d+\/transfer\/recentShows\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+#!category=zwjtano
 
 [MITM]
 hostname = %APPEND% appapi.motianlun.cn
+
+[Map Local]
+^https:\/\/appapi\.motianlun\.cn\/showapi\/pub\/site\/\d+\/app\/loading\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/appapi\.motianlun\.cn\/showapi\/pub\/site\/\d+\/banner\/app\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/appapi\.motianlun\.cn\/userdataapi\/pub\/v\d\/top\/keywords\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/appapi\.motianlun\.cn\/buyerapi\/buyer\/v\d\/search\/index\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/appapi\.motianlun\.cn\/showapi\/site\/\d+\/transfer\/recentShows\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
