@@ -198,6 +198,15 @@
     ]
   },
   {
+    "name": "Hong Kong Toolbar去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/HongKongToolbar_remove_ads.lpx",
+    "output": "modules/HongKongToolbar_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "IPA工具箱助手",
     "source": "https://kelee.one/Tool/Loon/Lpx/IPATool.lpx",
     "output": "modules/IPATool.sgmodule",
