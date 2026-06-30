@@ -522,6 +522,15 @@
     ]
   },
   {
+    "name": "百度翻译去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/BaiduTranslate_remove_ads.lpx",
+    "output": "modules/BaiduTranslate_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "百度输入法去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/Baidu_input_method_remove_ads.lpx",
     "output": "modules/Baidu_input_method_remove_ads.sgmodule",
@@ -661,6 +670,15 @@
     "name": "测测去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/Cece_remove_ads.lpx",
     "output": "modules/Cece_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "超级课程表去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MyFriday_remove_ads.lpx",
+    "output": "modules/MyFriday_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
@@ -1558,6 +1576,33 @@
     ]
   },
   {
+    "name": "天猫校园去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TmallCampus_remove_ads.lpx",
+    "output": "modules/TmallCampus_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "天气预报去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/iReaderCityWeather_remove_ads.lpx",
+    "output": "modules/iReaderCityWeather_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "天天跳绳去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/CrazyRope_remove_ads.lpx",
+    "output": "modules/CrazyRope_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "图怪兽去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/TuGuaiShou_remove_ads.lpx",
     "output": "modules/TuGuaiShou_remove_ads.sgmodule",
@@ -1579,6 +1624,15 @@
     "name": "挖财记账去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/WaCaiJiZhang_remove_ads.lpx",
     "output": "modules/WaCaiJiZhang_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "挖财记账去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Wacai_remove_ads.lpx",
+    "output": "modules/Wacai_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
@@ -1882,6 +1936,15 @@
     ]
   },
   {
+    "name": "学习通去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ChaoXingStudy_remove_ads.lpx",
+    "output": "modules/ChaoXingStudy_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "迅雷去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/XunLei_remove_ads.lpx",
     "output": "modules/XunLei_remove_ads.sgmodule",
@@ -2038,6 +2101,15 @@
     "name": "中国人保去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/PICC_Insurance_remove_ads.lpx",
     "output": "modules/PICC_Insurance_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "中国天气去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/WeatherChina_remove_ads.lpx",
+    "output": "modules/WeatherChina_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
