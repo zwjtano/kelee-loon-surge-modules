@@ -423,6 +423,15 @@
     ]
   },
   {
+    "name": "WakeUp课程表去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/WakeupSchedule_remove_ads.lpx",
+    "output": "modules/WakeupSchedule_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "WARP节点查询",
     "source": "https://kelee.one/Tool/Loon/Lpx/WARP_Node_Query.lpx",
     "output": "modules/WARP_Node_Query.sgmodule",
@@ -865,6 +874,15 @@
     ]
   },
   {
+    "name": "凤凰新闻去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ifengNews_remove_ads.lpx",
+    "output": "modules/ifengNews_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "风鸟去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/RiskBird_remove_ads.lpx",
     "output": "modules/RiskBird_remove_ads.sgmodule",
@@ -940,6 +958,15 @@
     "name": "华住会去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/HantingHotels_remove_ads.lpx",
     "output": "modules/HantingHotels_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "慧生活798去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SmartLife_remove_ads.lpx",
+    "output": "modules/SmartLife_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
@@ -1336,6 +1363,15 @@
     "name": "南网在线去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/CSG_remove_ads.lpx",
     "output": "modules/CSG_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "排班日历去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/AxWorkSchedule_remove_ads.lpx",
+    "output": "modules/AxWorkSchedule_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
@@ -1984,6 +2020,15 @@
     "name": "一甜相机去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/Yitian_remove_ads.lpx",
     "output": "modules/Yitian_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "易校园去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YiSchool_remove_ads.lpx",
+    "output": "modules/YiSchool_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
