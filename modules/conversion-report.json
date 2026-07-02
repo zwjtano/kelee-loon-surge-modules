@@ -153,6 +153,15 @@
     ]
   },
   {
+    "name": "e充电去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/EasyCharge_remove_ads.lpx",
+    "output": "modules/EasyCharge_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "Fileball网盘挂载",
     "source": "https://kelee.one/Tool/Loon/Lpx/Fileball_mount.lpx",
     "output": "modules/Fileball_mount.sgmodule",
@@ -1072,6 +1081,15 @@
     ]
   },
   {
+    "name": "看家王去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ChatCam_remove_ads.lpx",
+    "output": "modules/ChatCam_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "可莉广告过滤器",
     "source": "https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx",
     "output": "modules/Remove_ads_by_keli.sgmodule",
@@ -1273,6 +1291,15 @@
     "name": "美丽修行去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/Meizhixiuxing_remove_ads.lpx",
     "output": "modules/Meizhixiuxing_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "每日赛车去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/MeiRiSaiChe_remove_ads.lpx",
+    "output": "modules/MeiRiSaiChe_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
@@ -1615,6 +1642,15 @@
     "name": "天猫校园去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/TmallCampus_remove_ads.lpx",
     "output": "modules/TmallCampus_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "天气通去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TianQiTong_remove_ads.lpx",
+    "output": "modules/TianQiTong_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
