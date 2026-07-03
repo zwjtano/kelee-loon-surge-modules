@@ -270,6 +270,15 @@
     ]
   },
   {
+    "name": "OKOK去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/OKOK_remove_ads.lpx",
+    "output": "modules/OKOK_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "Pinterest去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/Pinterest_remove_ads.lpx",
     "output": "modules/Pinterest_remove_ads.sgmodule",
@@ -712,6 +721,15 @@
     ]
   },
   {
+    "name": "创维智慧云去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SkyworthDigitalPicamera_remove_ads.lpx",
+    "output": "modules/SkyworthDigitalPicamera_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "触站去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/Chuzhan_remove_ads.lpx",
     "output": "modules/Chuzhan_remove_ads.sgmodule",
@@ -742,6 +760,15 @@
     "name": "大麦去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/Damai_remove_ads.lpx",
     "output": "modules/Damai_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "大姨妈月经期助手去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Dayima_remove_ads.lpx",
+    "output": "modules/Dayima_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
@@ -931,6 +958,15 @@
     "name": "稿定设计去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/GaoDing_remove_ads.lpx",
     "output": "modules/GaoDing_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "海雀去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/AlcidaeVideo_remove_ads.lpx",
+    "output": "modules/AlcidaeVideo_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
@@ -1891,6 +1927,15 @@
     ]
   },
   {
+    "name": "小白智慧打印去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/XiaobaiPrint_remove_ads.lpx",
+    "output": "modules/XiaobaiPrint_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "小蚕霸王餐去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/XiaoCan_remove_ads.lpx",
     "output": "modules/XiaoCan_remove_ads.sgmodule",
@@ -2137,6 +2182,15 @@
     "name": "掌阅去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/iReader_remove_ads.lpx",
     "output": "modules/iReader_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "直播吧去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Zhibo8_remove_ads.lpx",
+    "output": "modules/Zhibo8_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
