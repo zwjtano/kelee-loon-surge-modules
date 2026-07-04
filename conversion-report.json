@@ -712,6 +712,15 @@
     ]
   },
   {
+    "name": "车来了去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Chelaile_remove_ads.lpx",
+    "output": "modules/Chelaile_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "成分喵去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/ChengFenMiao_remove_ads.lpx",
     "output": "modules/ChengFenMiao_remove_ads.sgmodule",
