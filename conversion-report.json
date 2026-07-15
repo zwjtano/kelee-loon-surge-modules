@@ -991,6 +991,15 @@
     ]
   },
   {
+    "name": "好轻去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/YunmaiScale_remove_ads.lpx",
+    "output": "modules/YunmaiScale_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "盒马去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/MrHema_remove_ads.lpx",
     "output": "modules/MrHema_remove_ads.sgmodule",
