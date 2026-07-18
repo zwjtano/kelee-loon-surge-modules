@@ -189,15 +189,6 @@
     ]
   },
   {
-    "name": "GitHub加速",
-    "source": "https://kelee.one/Tool/Loon/Lpx/Switch_github_mirror.lpx",
-    "output": "modules/Switch_github_mirror.sgmodule",
-    "status": "ok",
-    "warnings": [
-      "Converted by Script-Hub Rewrite-Parser"
-    ]
-  },
-  {
     "name": "Google搜索重定向",
     "source": "https://kelee.one/Tool/Loon/Lpx/Google.lpx",
     "output": "modules/Google.sgmodule",
