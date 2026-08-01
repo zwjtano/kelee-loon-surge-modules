@@ -856,6 +856,15 @@
     ]
   },
   {
+    "name": "多屏互动去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TCLnScreen_remove_ads.lpx",
+    "output": "modules/TCLnScreen_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "番茄小说去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/DragonRead_remove_ads.lpx",
     "output": "modules/DragonRead_remove_ads.sgmodule",
