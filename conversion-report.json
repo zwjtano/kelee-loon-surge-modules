@@ -378,6 +378,15 @@
     ]
   },
   {
+    "name": "Telegram重定向",
+    "source": "https://kelee.one/Tool/Loon/Lpx/TelegramRedirect.lpx",
+    "output": "modules/TelegramRedirect.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "TeraBox去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/TeraBox_remove_ads.lpx",
     "output": "modules/TeraBox_remove_ads.sgmodule",
