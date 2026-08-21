@@ -1306,6 +1306,15 @@
     ]
   },
   {
+    "name": "联掌门户去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/LZMH_remove_ads.lpx",
+    "output": "modules/LZMH_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "萝卜快跑去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/RoboTaxi_remove_ads.lpx",
     "output": "modules/RoboTaxi_remove_ads.sgmodule",
@@ -1318,6 +1327,15 @@
     "name": "马蜂窝去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/MaFengWo_remove_ads.lpx",
     "output": "modules/MaFengWo_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "马克水印相机去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/marki_remove_ads.lpx",
+    "output": "modules/marki_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
