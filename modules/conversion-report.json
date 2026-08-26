@@ -1621,6 +1621,15 @@
     ]
   },
   {
+    "name": "亲宝宝去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Qbb_remove_ads.lpx",
+    "output": "modules/Qbb_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "蜻蜓FM去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/QtingFM_remove_ads.lpx",
     "output": "modules/QtingFM_remove_ads.sgmodule",
@@ -1918,6 +1927,15 @@
     ]
   },
   {
+    "name": "微店去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/Weidian_remove_ads.lpx",
+    "output": "modules/Weidian_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "威锋去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/WPForum_remove_ads.lpx",
     "output": "modules/WPForum_remove_ads.sgmodule",
@@ -2137,6 +2155,15 @@
     "name": "行者户外去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/OnTheWay_remove_ads.lpx",
     "output": "modules/OnTheWay_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "新浪财经去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/SinaStock_remove_ads.lpx",
+    "output": "modules/SinaStock_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"
