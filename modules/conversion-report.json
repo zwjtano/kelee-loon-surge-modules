@@ -288,6 +288,15 @@
     ]
   },
   {
+    "name": "PICOOC去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/PICOOC_remove_ads.lpx",
+    "output": "modules/PICOOC_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "Pinterest去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/Pinterest_remove_ads.lpx",
     "output": "modules/Pinterest_remove_ads.sgmodule",
@@ -2416,6 +2425,15 @@
     "name": "纵横小说去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/ZongHeng_remove_ads.lpx",
     "output": "modules/ZongHeng_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
+    "name": "最美壁纸去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/iWallBiZhi_remove_ads.lpx",
+    "output": "modules/iWallBiZhi_remove_ads.sgmodule",
     "status": "ok",
     "warnings": [
       "Converted by Script-Hub Rewrite-Parser"

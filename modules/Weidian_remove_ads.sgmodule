@@ -4,15 +4,10 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weidian.png
 #!openUrl=https://apps.apple.com/app/id860384719
 #!tag=去广告
-#!loon_version=3.5.1(980)
+#!loon_version=3.5.1(984)
 #!homepage=https://hub.kelee.one
-#!date=2026-08-26 07:17:57
+#!date=2026-08-27 22:53:53
 #!category=zwjtano
-
-[Script]
-配置修改 = type=http-response, pattern=^https:\/\/thor\.weidian\.com\/appconf\/getAppConfig\/, script-path=https://kelee.one/Resource/JavaScript/Weidian/getAppConfig.js, requires-body=true, binary-body-mode=true
-
-精简钱包区 = type=http-response, pattern=^https:\/\/thor\.weidian\.com\/wgs\/wallet\.query\.order\.entrance\/, script-path=https://kelee.one/Resource/JavaScript/Weidian/wallet.js, requires-body=true, binary-body-mode=true
 
 [MITM]
 hostname = %APPEND% thor.weidian.com
