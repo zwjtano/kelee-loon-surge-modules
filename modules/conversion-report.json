@@ -1225,6 +1225,15 @@
     ]
   },
   {
+    "name": "口袋壁纸去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ShoujiDesk_remove_ads.lpx",
+    "output": "modules/ShoujiDesk_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "快递100去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/KuaiDi100_remove_ads.lpx",
     "output": "modules/KuaiDi100_remove_ads.sgmodule",
