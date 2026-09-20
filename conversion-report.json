@@ -1702,6 +1702,15 @@
     ]
   },
   {
+    "name": "闪动校园去广告",
+    "source": "https://kelee.one/Tool/Loon/Lpx/ShandongSchool_remove_ads.lpx",
+    "output": "modules/ShandongSchool_remove_ads.sgmodule",
+    "status": "ok",
+    "warnings": [
+      "Converted by Script-Hub Rewrite-Parser"
+    ]
+  },
+  {
     "name": "省钱快报去广告",
     "source": "https://kelee.one/Tool/Loon/Lpx/YueDanBa_remove_ads.lpx",
     "output": "modules/YueDanBa_remove_ads.sgmodule",
