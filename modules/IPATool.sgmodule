@@ -3,12 +3,16 @@
 #!author=小白脸
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/IPATool.png
 #!openUrl=https://apps.apple.com/app/id6479691128
-#!tag=功能增强
+#!category=zwjtano
 #!system_version=18
 #!loon_version=3.5.1(998)
 #!homepage=https://hub.kelee.one
 #!date=2026-10-02 13:57:49
-#!category=zwjtano
+
+[Script]
+App Store API = type=http-request, pattern=(?i)^https:\/\/apple-api\.com, script-path=https://kelee.one/Resource/JavaScript/IPATool/AppStoreAPI.js, requires-body=true
+
+安装器 = type=http-request, pattern=(?i)^https:\/\/xiaobai\.app, script-path=https://kelee.one/Resource/JavaScript/IPATool/Installer.js
 
 [MITM]
 hostname = %APPEND% apple-api.com, xiaobai.app

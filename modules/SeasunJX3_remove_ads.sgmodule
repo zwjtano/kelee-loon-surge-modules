@@ -3,14 +3,16 @@
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SeasunJX3.png
 #!openUrl=https://apps.apple.com/app/id1002355194
-#!tag=去广告
+#!category=zwjtano
 #!loon_version=3.5.1(998)
 #!homepage=https://hub.kelee.one
 #!date=2026-10-02 13:57:49
-#!category=zwjtano
 
 [General]
 always-real-ip = %APPEND% *-update.xoyocdn.com, xg-flow.xoyo.com
+
+[Map Local]
+(?i)^https:\/\/jx3comm\.xoyocdn\.com\/jx3gc\/zhcn\/login_ad\/WebCareer\/WebCareerTab\.txt data-type=text data="" status-code=404
 
 [MITM]
 hostname = %APPEND% jx3comm.xoyocdn.com

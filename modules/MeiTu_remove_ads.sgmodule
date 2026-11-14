@@ -3,14 +3,16 @@
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MeiTu.png
 #!openUrl=https://apps.apple.com/app/id416048305
-#!tag=去广告
+#!category=zwjtano
 #!loon_version=3.5.1(998)
 #!homepage=https://hub.kelee.one
 #!date=2026-10-02 13:57:49
-#!category=zwjtano
 
 [Rule]
 DOMAIN,adui.tg.meitu.com,REJECT
+
+[Body Rewrite]
+http-response-jq (?i)^https:\/\/api\.posters\.meitu\.com\/common\/init\.json 'delpaths([["data","vip"]])'
 
 [MITM]
 hostname = %APPEND% api.posters.meitu.com

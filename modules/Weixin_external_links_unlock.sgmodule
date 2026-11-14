@@ -3,11 +3,13 @@
 #!author=zZPiglet[https://github.com/zZPiglet]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Weixin.png
 #!openUrl=https://apps.apple.com/app/id414478124
-#!tag=功能增强
+#!category=zwjtano
 #!loon_version=3.5.1(998)
 #!homepage=https://hub.kelee.one
 #!date=2026-10-02 13:57:49
-#!category=zwjtano
+
+[Script]
+微信外部链接解锁 = type=http-response, pattern=(?i)^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://kelee.one/Resource/JavaScript/Weixin/Weixin_external_links_unlock.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% weixin110.qq.com, security.wechat.com

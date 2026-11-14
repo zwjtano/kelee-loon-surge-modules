@@ -3,11 +3,13 @@
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MiaoRead.png
 #!openUrl=https://apps.apple.com/app/id6445987673
-#!tag=去广告
+#!category=zwjtano
 #!loon_version=3.5.1(998)
 #!homepage=https://hub.kelee.one
 #!date=2026-10-02 13:57:49
-#!category=zwjtano
+
+[Map Local]
+(?i)^https:\/\/api\.miaomiaoyd\.com\/book\/config\/getAdsSettings$ data-type=text data="" status-code=404
 
 [MITM]
 hostname = %APPEND% api.miaomiaoyd.com

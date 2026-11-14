@@ -3,11 +3,13 @@
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TestFlight.png
 #!openUrl=https://apps.apple.com/app/id899247664
-#!tag=功能增强
+#!category=zwjtano
 #!loon_version=3.5.1(998)
 #!homepage=https://hub.kelee.one
 #!date=2026-10-02 13:57:49
-#!category=zwjtano
+
+[Body Rewrite]
+http-request (?i)^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$ "\"storefrontId\"\\x20:\\x20\"\\d{6}-\\d{2},\\d{2}\"," "\"storefrontId\":\"143441-19,29\","
 
 [MITM]
 hostname = %APPEND% testflight.apple.com
